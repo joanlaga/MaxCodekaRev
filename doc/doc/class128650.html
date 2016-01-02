@@ -1,0 +1,76 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class CtrlAdminVentas</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class CtrlAdminVentas</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass128650"></a>
+<p>Declaration :</p><ul>
+<li>Php :  class CtrlAdminVentas </li></ul><p>Artifact : <a href="index.html#refartifact128650"><b>CtrlAdminVentas</b></a></p>
+<div class="sub">
+<a name="refattribute132490"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_ADMINISTRAR</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_ADMINISTRAR :  =  'VstAdminVentas.tpl', read only</li><li>Php :  const VISTA_ADMINISTRAR</li></ul><a name="refattribute132618"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_ARTICULOS</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_ARTICULOS :  =  'VstVentasVerArticulos.tpl', read only</li><li>Php :  const VISTA_ARTICULOS</li></ul><a name="refattribute132746"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_DETALLE</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_DETALLE :  =  'VstVentasGrillaLineas.tpl', read only</li><li>Php :  const VISTA_DETALLE</li></ul><a name="refattribute132874"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_PAGAR</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_PAGAR :  =  'VstVentasPagarFactura.tpl', read only</li><li>Php :  const VISTA_PAGAR</li></ul><a name="refattribute133002"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_ERROR</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_ERROR :  =  'VstDefault.tpl', read only</li><li>Php :  const VISTA_ERROR</li></ul><a name="refattribute133130"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_IMPRESION</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_IMPRESION :  =  'VstVentasImprimirFactura.tpl', read only</li><li>Php :  const VISTA_IMPRESION</li></ul><a name="refattribute133258"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_GRILLA_ARTICULOS</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_GRILLA_ARTICULOS :  =  'VstVentasGrillaArticulos.tpl', read only</li><li>Php :  const VISTA_GRILLA_ARTICULOS</li></ul><a name="refattribute133386"></a>
+<table><tr><td><div class="element">Attribute <b>smarty</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + smarty : </li><li>Php : public $smarty</li></ul><a name="refattribute133514"></a>
+<table><tr><td><div class="element">Attribute <b>codUsuario</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - codUsuario : </li><li>Php : private $codUsuario</li></ul><a name="refattribute133642"></a>
+<table><tr><td><div class="element">Attribute <b>mdlParametrizacion</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + mdlParametrizacion : </li><li>Php : public $mdlParametrizacion</li></ul><a name="refattribute133770"></a>
+<table><tr><td><div class="element">Attribute <b>mdlFacturacion</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mdlFacturacion : </li><li>Php : private $mdlFacturacion</li></ul><a name="refattribute133898"></a>
+<table><tr><td><div class="element">Attribute <b>mdlCategoriaArticulo</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mdlCategoriaArticulo : </li><li>Php : private $mdlCategoriaArticulo</li></ul><a name="refattribute134026"></a>
+<table><tr><td><div class="element">Attribute <b>mdlArticulos</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mdlArticulos : </li><li>Php : private $mdlArticulos</li></ul><a name="refattribute134154"></a>
+<table><tr><td><div class="element">Attribute <b>mdlCaja</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mdlCaja : </li><li>Php : private $mdlCaja</li></ul><a name="refattribute134282"></a>
+<table><tr><td><div class="element">Attribute <b>mdlCliente</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mdlCliente : </li><li>Php : private $mdlCliente</li></ul><a name="refattribute134410"></a>
+<table><tr><td><div class="element">Attribute <b>productosFactura</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - productosFactura : </li><li>Php : private $productosFactura</li></ul><a name="refattribute134538"></a>
+<table><tr><td><div class="element">Attribute <b>voFabrica</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - voFabrica : </li><li>Php : private $voFabrica</li></ul><a name="refoperation131210"></a>
+<table><tr><td><div class="element">Operation <b>__construct</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + __construct() : </li><li>Php : public function __construct() </li></ul><a name="refoperation131338"></a>
+<table><tr><td><div class="element">Operation <b>paginaAdmin</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + paginaAdmin() : </li><li>Php : public function paginaAdmin() </li></ul><a name="refoperation131466"></a>
+<table><tr><td><div class="element">Operation <b>iniGet</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + iniGet(inout get : ) : </li><li>Php : public function iniGet($get) </li></ul><a name="refoperation131594"></a>
+<table><tr><td><div class="element">Operation <b>initPost</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + initPost(inout post : ) : </li><li>Php : public function initPost($post) </li></ul><a name="refoperation131722"></a>
+<table><tr><td><div class="element">Operation <b>llenarGrillaProductos</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + llenarGrillaProductos(inout busqueda : ) : </li><li>Php : public function llenarGrillaProductos($busqueda) </li></ul><a name="refoperation131850"></a>
+<table><tr><td><div class="element">Operation <b>agregarProductoTablaFacturaTmp</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - agregarProductoTablaFacturaTmp(inout post : ) : </li><li>Php : private function agregarProductoTablaFacturaTmp($post) </li></ul><a name="refoperation131978"></a>
+<table><tr><td><div class="element">Operation <b>guardarFacturarAPagar</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - guardarFacturarAPagar(inout post : ) : </li><li>Php : private function guardarFacturarAPagar($post) </li></ul><a name="refoperation132106"></a>
+<table><tr><td><div class="element">Operation <b>obtenerDatosCliente</b></div></td></tr></table><p>guardar factura<br /></p><p>Declaration :</p><ul><li>Uml : - obtenerDatosCliente(inout codcliente : ) : </li><li>Php : private function obtenerDatosCliente($codcliente) </li></ul><a name="refoperation132234"></a>
+<table><tr><td><div class="element">Operation <b>eliminarProductosGrillaFacturaLineaTmp</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - eliminarProductosGrillaFacturaLineaTmp() : </li><li>Php : private function eliminarProductosGrillaFacturaLineaTmp() </li></ul><a name="refoperation132362"></a>
+<table><tr><td><div class="element">Operation <b>efectuarPago</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - efectuarPago(inout post : ) : </li><li>Php : private function efectuarPago($post) </li></ul><a name="refoperation132490"></a>
+<table><tr><td><div class="element">Operation <b>imprimirFactura</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - imprimirFactura() : </li><li>Php : private function imprimirFactura() </li></ul><a name="refrelation155146"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class130058.html#refclass130058"><b>MdlParametrizacion</b></a></li><li>Php : private $</li></ul><a name="refrelation155402"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class129162.html#refclass129162"><b>MdlCategoriaArticulo</b></a></li><li>Php : private $</li></ul><a name="refrelation155658"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class128906.html#refclass128906"><b>MdlArticulos</b></a></li><li>Php : private $</li></ul><a name="refrelation155786"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class129674.html#refclass129674"><b>MdlFacturacion</b></a></li><li>Php : private $</li></ul><a name="refrelation156170"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class129034.html#refclass129034"><b>MdlCaja</b></a></li><li>Php : private $</li></ul><a name="refrelation156426"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class129290.html#refclass129290"><b>MdlCliente</b></a></li><li>Php : private $</li></ul></div>
+<p>All public operations : <a href="class128650.html#refoperation131210"><b>__construct</b></a> , <a href="class128650.html#refoperation131466"><b>iniGet</b></a> , <a href="class128650.html#refoperation131594"><b>initPost</b></a> , <a href="class128650.html#refoperation131722"><b>llenarGrillaProductos</b></a> , <a href="class128650.html#refoperation131338"><b>paginaAdmin</b></a> </p>
+</body>
+</html>

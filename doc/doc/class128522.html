@@ -1,0 +1,67 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class CtrlAdminUsuario</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class CtrlAdminUsuario</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass128522"></a>
+<p>Declaration :</p><ul>
+<li>Php :  class CtrlAdminUsuario </li></ul><p>Artifact : <a href="index.html#refartifact128522"><b>CtrlAdminUsuario</b></a></p>
+<div class="sub">
+<a name="refattribute130570"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_ADICIONAR</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_ADICIONAR :  =  'VstAddUsuario.tpl', read only</li><li>Php :  const VISTA_ADICIONAR</li></ul><a name="refattribute130698"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_ACTUALIZAR</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_ACTUALIZAR :  =  'VstActualizarUsuario.tpl', read only</li><li>Php :  const VISTA_ACTUALIZAR</li></ul><a name="refattribute130826"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_DETALLE</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_DETALLE :  =  'VstDetalleUsuarios.tpl', read only</li><li>Php :  const VISTA_DETALLE</li></ul><a name="refattribute130954"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_ADMINISTRAR</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_ADMINISTRAR :  =  'VstAdminUsuario.tpl', read only</li><li>Php :  const VISTA_ADMINISTRAR</li></ul><a name="refattribute131082"></a>
+<table><tr><td><div class="element">Attribute <b>VISTA_ERROR</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ VISTA_ERROR :  =  'VstDefault.tpl', read only</li><li>Php :  const VISTA_ERROR</li></ul><a name="refattribute131210"></a>
+<table><tr><td><div class="element">Attribute <b>smarty</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + smarty : </li><li>Php : public $smarty</li></ul><a name="refattribute131338"></a>
+<table><tr><td><div class="element">Attribute <b>usuariosDao</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - usuariosDao : </li><li>Php : private $usuariosDao</li></ul><a name="refattribute131466"></a>
+<table><tr><td><div class="element">Attribute <b>primerNombre</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - primerNombre : </li><li>Php : private $primerNombre</li></ul><a name="refattribute131594"></a>
+<table><tr><td><div class="element">Attribute <b>segundoNombre</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - segundoNombre : </li><li>Php : private $segundoNombre</li></ul><a name="refattribute131722"></a>
+<table><tr><td><div class="element">Attribute <b>primerApellido</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - primerApellido : </li><li>Php : private $primerApellido</li></ul><a name="refattribute131850"></a>
+<table><tr><td><div class="element">Attribute <b>segundoApellido</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - segundoApellido : </li><li>Php : private $segundoApellido</li></ul><a name="refattribute131978"></a>
+<table><tr><td><div class="element">Attribute <b>idUserRol</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - idUserRol : </li><li>Php : private $idUserRol</li></ul><a name="refattribute132106"></a>
+<table><tr><td><div class="element">Attribute <b>usuario</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - usuario : </li><li>Php : private $usuario</li></ul><a name="refattribute132234"></a>
+<table><tr><td><div class="element">Attribute <b>clave</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - clave : </li><li>Php : private $clave</li></ul><a name="refattribute132362"></a>
+<table><tr><td><div class="element">Attribute <b>idUser</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - idUser : </li><li>Php : private $idUser</li></ul><a name="refoperation130442"></a>
+<table><tr><td><div class="element">Operation <b>__construct</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + __construct() : </li><li>Php : public function __construct() </li></ul><a name="refoperation130570"></a>
+<table><tr><td><div class="element">Operation <b>initPost</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + initPost(inout post : ) : </li><li>Php : public function initPost($post) </li></ul><a name="refoperation130698"></a>
+<table><tr><td><div class="element">Operation <b>iniGet</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + iniGet(inout get : ) : </li><li>Php : public function iniGet($get) </li></ul><a name="refoperation130826"></a>
+<table><tr><td><div class="element">Operation <b>configurarUsuario</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - configurarUsuario(inout post : , inout opt : ) : </li><li>Php : private function configurarUsuario($post, $opt) </li></ul><a name="refoperation130954"></a>
+<table><tr><td><div class="element">Operation <b>opcionesDaoUsuario</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - opcionesDaoUsuario(inout opt : ) : </li><li>Php : private function opcionesDaoUsuario($opt) </li></ul><a name="refoperation131082"></a>
+<table><tr><td><div class="element">Operation <b>consultarUsuarios</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - consultarUsuarios() : </li><li>Php : private function consultarUsuarios() </li></ul><a name="refrelation153098"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class130186.html#refclass130186"><b>MdlReportes</b></a></li><li>Php : private $</li></ul><a name="refrelation153610"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class129930.html#refclass129930"><b>MdlLogin</b></a></li><li>Php : private $</li></ul><a name="refrelation153866"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class129546.html#refclass129546"><b>MdlConexion</b></a></li><li>Php : private $</li></ul><a name="refrelation154122"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class129546.html#refclass129546"><b>MdlConexion</b></a></li><li>Php : private $</li></ul><a name="refrelation156682"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class129930.html#refclass129930"><b>MdlLogin</b></a></li><li>Php : private $</li></ul><a name="refrelation156938"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class129930.html#refclass129930"><b>MdlLogin</b></a></li><li>Php : private $</li></ul></div>
+<p>All public operations : <a href="class128522.html#refoperation130442"><b>__construct</b></a> , <a href="class128522.html#refoperation130698"><b>iniGet</b></a> , <a href="class128522.html#refoperation130570"><b>initPost</b></a> </p>
+</body>
+</html>

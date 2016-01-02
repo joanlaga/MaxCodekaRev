@@ -1,0 +1,91 @@
+
+
+oct/2014 joanaga
+Se cambiaron los <? por <?php, para mejor compatibilidad con php 5.X
+Se cambio <script language="JavaScript"> , para mejor compatibilidad con php 5.X
+se corrige bug en funcion de pdf ya que fatan '' en algunas fuciones
+Se limpian expacios y retornos de carro en los scrip par amejor visualizacion.
+
+
+correcion de errores del tipo:
+
+
+Notice: Undefined index: iniciopagina in /var/www/html/maxcodeka/articulos/rejilla.php on line 108 
+Notice: Undefined variable: i in /var/www/html/maxcodeka/articulos/rejilla.php on line 117 
+Notice: Undefined variable: i in /var/www/html/maxcodeka/articulos/rejilla.php on line 117 
+Notice: Undefined variable: i in /var/www/html/maxcodeka/articulos/rejilla.php on line 117 
+Notice: Undefined variable: i in /var/www/html/maxcodeka/articulos/rejilla.php on line 117 
+Notice: Undefined variable: i in /var/www/html/maxcodeka/articulos/rejilla.php on line 117 
+
+agregando isset o @ segunseas caso o arrglando el nombe de variables
+@
+			<input type="hidden" name="numfilas" id="numfilas" value="<?php echo $filas?>">
+				<?php @$iniciopagina=$_POST["iniciopagina"];
+				if (empty($iniciopagina)) { @$iniciopagina=$_GET["iniciopagina"]; } else { $iniciopagina=$iniciopagina-1;}
+				if (empty($iniciopagina)) { $iniciopagina=0; }
+
+
+			<input type="hidden" name="numfilas" id="numfilas" value="<?php echo $filas?>">
+				<?php $iniciopagina=$_POST["iniciopagina"];
+				if (empty($iniciopagina)) { $iniciopagina=$_GET["iniciopagina"]; } else { $iniciopagina=$iniciopagina-1;}
+				if (empty($iniciopagina)) { $iniciopagina=0; }
+
+---
+						   while ($contador < mysql_num_rows($res_resultado)) { 
+						   		if ($i % 2) { $fondolinea="itemParTabla"; } else { $fondolinea="itemImparTabla";	}?>
+
+cambio por 
+							while ($contador < mysql_num_rows($res_resultado)) { 
+						   		if ($contador  % 2) { $fondolinea="itemParTabla"; } else { $fondolinea="itemImparTabla";	}?>
+
+
+
+
+Notice: Use of undefined constant C - assumed 'C' in /var/www/html/maxcodeka/fpdf/articulos.php on line 22 
+Notice: Undefined index: cboFamilias in /var/www/html/maxcodeka/fpdf/articulos.php on line 32 
+Notice: Undefined index: cboProveedores in /var/www/html/maxcodeka/fpdf/articulos.php on line 34 
+Notice: Undefined index: cboUbicacion in /var/www/html/maxcodeka/fpdf/articulos.php on line 35 FPDF error: Some data has already been output, can't send PDF file
+
+
+
+/*
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+
+
+Array post
+(
+    [codarticulo] => 
+    [referencia] => 
+    [AcboFamilias] => 0
+    [descripcion] => 
+    [cboProveedores] => 0
+    [cboUbicacion] => 0
+    [filas] => 
+    [iniciopagina] => 
+    [cadena_busqueda] => 
+)
+
+$codarticulo=$_POST["codarticulo"];
+$descripcion=$_POST["descripcion"];
+$codfamilia=$_POST["cboFamilias"];
+$referencia=$_POST["referencia"];
+$codproveedor=$_POST["cboProveedores"];
+$codubicacion=$_POST["cboUbicacion"];
+
+AcboFamilias
+*/
+$codarticulo=$_POST["codarticulo"];
+$referencia=$_POST["referencia"];
+$codfamilia=$_POST["AcboFamilias"];
+$descripcion=$_POST["descripcion"];
+$codproveedor=$_POST["cboProveedores"];
+$codubicacion=$_POST["cboUbicacion"];
+$cadena_busqueda=$_POST["cadena_busqueda"];
+
+--------
+
+
+
+Genral

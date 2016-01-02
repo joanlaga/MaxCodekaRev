@@ -1,0 +1,69 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class MdlFacturacion</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class MdlFacturacion</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass129674"></a>
+<p>Declaration :</p><ul>
+<li>Php :  class MdlFacturacion extends <a href="class128778.html#refclass128778"><b>MdlAbstract</b></a> </li></ul><p>Artifact : <a href="index.html#refartifact129930"><b>MdlFacturacion</b></a></p>
+<div class="sub">
+<a name="refattribute135306"></a>
+<table><tr><td><div class="element">Attribute <b>daoFormasPago</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - daoFormasPago : </li><li>Php : private $daoFormasPago</li></ul><a name="refattribute135434"></a>
+<table><tr><td><div class="element">Attribute <b>datos</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + datos : </li><li>Php : public $datos</li></ul><a name="refattribute135562"></a>
+<table><tr><td><div class="element">Attribute <b>index</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - index : </li><li>Php : private $index</li></ul><a name="refattribute135690"></a>
+<table><tr><td><div class="element">Attribute <b>item</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - item : </li><li>Php : private $item</li></ul><a name="refattribute135818"></a>
+<table><tr><td><div class="element">Attribute <b>itemsFactura</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + itemsFactura : </li><li>Php : public $itemsFactura</li></ul><a name="refattribute135946"></a>
+<table><tr><td><div class="element">Attribute <b>mdlLibroDiario</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mdlLibroDiario : </li><li>Php : private $mdlLibroDiario</li></ul><a name="refattribute136074"></a>
+<table><tr><td><div class="element">Attribute <b>mdlArticulos</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mdlArticulos : </li><li>Php : private $mdlArticulos</li></ul><a name="refattribute136202"></a>
+<table><tr><td><div class="element">Attribute <b>msgMinimo</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + msgMinimo : </li><li>Php : public $msgMinimo</li></ul><a name="refattribute136330"></a>
+<table><tr><td><div class="element">Attribute <b>precioTotalFactSinIva</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + precioTotalFactSinIva : </li><li>Php : public $precioTotalFactSinIva</li></ul><a name="refattribute136458"></a>
+<table><tr><td><div class="element">Attribute <b>baseTotalImpuestosFact</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + baseTotalImpuestosFact : </li><li>Php : public $baseTotalImpuestosFact</li></ul><a name="refattribute136586"></a>
+<table><tr><td><div class="element">Attribute <b>precioTotalFact</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + precioTotalFact : </li><li>Php : public $precioTotalFact</li></ul><a name="refoperation136330"></a>
+<table><tr><td><div class="element">Operation <b>__construct</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + __construct() : </li><li>Php : public function __construct() </li></ul><a name="refoperation136458"></a>
+<table><tr><td><div class="element">Operation <b>init</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - init() : </li><li>Php : private function init() </li></ul><a name="refoperation136586"></a>
+<table><tr><td><div class="element">Operation <b>calcularValores</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - calcularValores(inout valorXCantidadProducto : , inout ivaProducto : ) : </li><li>Php : private function calcularValores($valorXCantidadProducto, $ivaProducto) </li></ul><a name="refoperation136714"></a>
+<table><tr><td><div class="element">Operation <b>generarCodFactura</b></div></td></tr></table><p>***************  FACTURA ********************<br /></p><p>Declaration :</p><ul><li>Uml : + generarCodFactura(inout voFactura : ) : </li><li>Php : public function generarCodFactura($voFactura) </li></ul><a name="refoperation136842"></a>
+<table><tr><td><div class="element">Operation <b>actualizarPrecioFactura</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + actualizarPrecioFactura(inout voFactura : ) : </li><li>Php : public function actualizarPrecioFactura($voFactura) </li></ul><a name="refoperation136970"></a>
+<table><tr><td><div class="element">Operation <b>actualizarEstadoFactura</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + actualizarEstadoFactura(inout voFactura : ) : </li><li>Php : public function actualizarEstadoFactura($voFactura) </li></ul><a name="refoperation137098"></a>
+<table><tr><td><div class="element">Operation <b>selecionarFechaCobroFactura</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + selecionarFechaCobroFactura(inout voFactura : ) : </li><li>Php : public function selecionarFechaCobroFactura($voFactura) </li></ul><a name="refoperation137226"></a>
+<table><tr><td><div class="element">Operation <b>totalFacturasDesdeAperturaCaja</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + totalFacturasDesdeAperturaCaja(inout voFactura : ) : </li><li>Php : public function totalFacturasDesdeAperturaCaja($voFactura) </li></ul><a name="refoperation137354"></a>
+<table><tr><td><div class="element">Operation <b>adicionarProductosFactura</b></div></td></tr></table><p>*************** FACTURA LINEA ********************<br /></p><p>Declaration :</p><ul><li>Uml : + adicionarProductosFactura(inout voFactLinea : ) : </li><li>Php : public function adicionarProductosFactura($voFactLinea) </li></ul><a name="refoperation137482"></a>
+<table><tr><td><div class="element">Operation <b>seleccionarFormaPago</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + seleccionarFormaPago(inout formapago : ) : </li><li>Php : public function seleccionarFormaPago($formapago) </li></ul><a name="refoperation137610"></a>
+<table><tr><td><div class="element">Operation <b>seleccionarProductosFactura</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + seleccionarProductosFactura(inout codfactura : ) : </li><li>Php : public function seleccionarProductosFactura($codfactura) </li></ul><a name="refoperation137738"></a>
+<table><tr><td><div class="element">Operation <b>seleccionarIvasProductosFactura</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + seleccionarIvasProductosFactura(inout codfactura : ) : </li><li>Php : public function seleccionarIvasProductosFactura($codfactura) </li></ul><a name="refoperation137866"></a>
+<table><tr><td><div class="element">Operation <b>generarCodigoTemporal</b></div></td></tr></table><p>*************** FACTURACION TEMPORAL ********************<br /></p><p>Declaration :</p><ul><li>Uml : + generarCodigoTemporal(inout voFactTemp : ) : </li><li>Php : public function generarCodigoTemporal($voFactTemp) </li></ul><a name="refoperation137994"></a>
+<table><tr><td><div class="element">Operation <b>generarCodigoLineaTemporal</b></div></td></tr></table><p>*************** FACTURACION LINEA TEMPORAL ********************<br /></p><p>Declaration :</p><ul><li>Uml : + generarCodigoLineaTemporal(inout voFactLinea : ) : </li><li>Php : public function generarCodigoLineaTemporal($voFactLinea) </li></ul><a name="refoperation138122"></a>
+<table><tr><td><div class="element">Operation <b>buscarPorFacturasLineasTmp</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + buscarPorFacturasLineasTmp(inout voFactLinea : ) : </li><li>Php : public function buscarPorFacturasLineasTmp($voFactLinea) </li></ul><a name="refoperation138250"></a>
+<table><tr><td><div class="element">Operation <b>copiarProdFactLineaTmpAFactReal</b></div></td></tr></table><p>*************** ??? ********************<br /></p><p>Declaration :</p><ul><li>Uml : + copiarProdFactLineaTmpAFactReal(inout codfacturatmp : , inout codfactura : ) : </li><li>Php : public function copiarProdFactLineaTmpAFactReal($codfacturatmp, $codfactura) </li></ul><a name="refoperation138378"></a>
+<table><tr><td><div class="element">Operation <b>seleccionarFormasDePago</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + seleccionarFormasDePago() : </li><li>Php : public function seleccionarFormasDePago() </li></ul><a name="refoperation138506"></a>
+<table><tr><td><div class="element">Operation <b>comprobarCobroFactura</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + comprobarCobroFactura(inout voCobro : ) : </li><li>Php : public function comprobarCobroFactura($voCobro) </li></ul><a name="refoperation138634"></a>
+<table><tr><td><div class="element">Operation <b>nuevoCobro</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + nuevoCobro(inout voCobro : ) : </li><li>Php : public function nuevoCobro($voCobro) </li></ul><a name="refoperation138762"></a>
+<table><tr><td><div class="element">Operation <b>nuevoLibroDiario</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + nuevoLibroDiario(inout codfactura : , inout codcliente : , inout formapago : , inout numdocumento : , inout importe : ) : </li><li>Php : public function nuevoLibroDiario($codfactura, $codcliente, $formapago, $numdocumento, $importe) </li></ul><a name="refrelation154634"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class128138.html#refclass128138"><b>CtrlAdminCaja</b></a></li><li>Php : private $</li></ul><a name="refrelation155914"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class128650.html#refclass128650"><b>CtrlAdminVentas</b></a></li><li>Php : private $</li></ul></div>
+<p>All public operations : <a href="class129674.html#refoperation136330"><b>__construct</b></a> , <a href="class129674.html#refoperation136970"><b>actualizarEstadoFactura</b></a> , <a href="class129674.html#refoperation136842"><b>actualizarPrecioFactura</b></a> , <a href="class129674.html#refoperation137354"><b>adicionarProductosFactura</b></a> , <a href="class129674.html#refoperation138122"><b>buscarPorFacturasLineasTmp</b></a> , <a href="class129674.html#refoperation138506"><b>comprobarCobroFactura</b></a> , <a href="class129674.html#refoperation138250"><b>copiarProdFactLineaTmpAFactReal</b></a> , <a href="class129674.html#refoperation136714"><b>generarCodFactura</b></a> , <a href="class129674.html#refoperation137994"><b>generarCodigoLineaTemporal</b></a> , <a href="class129674.html#refoperation137866"><b>generarCodigoTemporal</b></a> , <a href="class128778.html#refoperation132874"><b>liberarDao</b></a> , <a href="class128778.html#refoperation133002"><b>liberarVO</b></a> , <a href="class129674.html#refoperation138634"><b>nuevoCobro</b></a> , <a href="class129674.html#refoperation138762"><b>nuevoLibroDiario</b></a> , <a href="class129674.html#refoperation137482"><b>seleccionarFormaPago</b></a> , <a href="class129674.html#refoperation138378"><b>seleccionarFormasDePago</b></a> , <a href="class129674.html#refoperation137738"><b>seleccionarIvasProductosFactura</b></a> , <a href="class129674.html#refoperation137610"><b>seleccionarProductosFactura</b></a> , <a href="class129674.html#refoperation137098"><b>selecionarFechaCobroFactura</b></a> , <a href="class128778.html#refoperation132618"><b>solicitarDao</b></a> , <a href="class128778.html#refoperation132746"><b>solicitarVO</b></a> , <a href="class128778.html#refoperation133386"><b>toArray</b></a> , <a href="class129674.html#refoperation137226"><b>totalFacturasDesdeAperturaCaja</b></a> </p>
+</body>
+</html>

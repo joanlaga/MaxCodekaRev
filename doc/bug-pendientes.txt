@@ -1,0 +1,44 @@
+problemas ocn formas de pago
+listado de codigos
+boton d eimprimir en cierre caja
+rEvisar ortografi apor lo menos en los caso de cambios de codificacion.
+normalizar nombres
+revisar el uso d etodo slos archivos
+generar mapa de tablas (creo que vi alguna por ahi)
+
+Reviar procesos de subuda de imagenes de productos
+Revisar proceso genracion dogis de barra com imagenes
+
+
+
+---
+
+aspectos por mejorar
+-actualizar el fpdt
+unificar los Css
+
+---
+
+nuevas funciones
+
+Agregar el acceso y permitir cierr y cambio d eoperador.
+agregar php info
+agregar hiden de uso por ip y hora.
+agrewgar instalacion desde cero
+
+generar acumulativos por familias
+generar acumulativos por vendedor
+
+funcines personalizados diferencviar user y 
+
+Generar funcion de codigos pde barras por famili, por marcar con selector y todos. mediante lote.
+
+
+Generar archios de exportacio importacisn de CVS
+
+----
+
+
+---
+
+
