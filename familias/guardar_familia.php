@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 
 //print_r($_REQUEST);
 

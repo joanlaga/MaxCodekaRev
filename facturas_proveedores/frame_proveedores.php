@@ -16,7 +16,7 @@ function pon_prefijo(pref,nombre,nif) {
 }
 
 </script>
-<?php include ("../conectar.php"); ?>
+<?php include ("../configuraciones/conectar.php"); ?>
 <body>
 <?php 
 	$consulta="SELECT * FROM proveedores WHERE borrado=0 ORDER BY codproveedor ASC";

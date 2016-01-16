@@ -41,10 +41,10 @@ cambio por
 
 
 
-Notice: Use of undefined constant C - assumed 'C' in /var/www/html/maxcodeka/fpdf/articulos.php on line 22 
-Notice: Undefined index: cboFamilias in /var/www/html/maxcodeka/fpdf/articulos.php on line 32 
-Notice: Undefined index: cboProveedores in /var/www/html/maxcodeka/fpdf/articulos.php on line 34 
-Notice: Undefined index: cboUbicacion in /var/www/html/maxcodeka/fpdf/articulos.php on line 35 FPDF error: Some data has already been output, can't send PDF file
+Notice: Use of undefined constant C - assumed 'C' in /var/www/html/maxcode../funciones/fpdf/articulos.php on line 22 
+Notice: Undefined index: cboFamilias in /var/www/html/maxcode../funciones/fpdf/articulos.php on line 32 
+Notice: Undefined index: cboProveedores in /var/www/html/maxcode../funciones/fpdf/articulos.php on line 34 
+Notice: Undefined index: cboUbicacion in /var/www/html/maxcode../funciones/fpdf/articulos.php on line 35 FPDF error: Some data has already been output, can't send PDF file
 
 
 

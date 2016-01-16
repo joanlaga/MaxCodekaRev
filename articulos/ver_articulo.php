@@ -2,7 +2,7 @@
 header('Cache-Control: no-cache');
 header('Pragma: no-cache'); 
 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php");
 
 

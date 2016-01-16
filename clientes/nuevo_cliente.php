@@ -1,14 +1,12 @@
-<?php include ("../conectar.php"); ?>
+<?php 
+require_once("../configuraciones/conectar.php");
+?>
 <html>
 	<head>
 		<title>Principal</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript" src="../funciones/validar.js"></script>
 		<script type="text/javascript">
-		
-		function cancelar() {
-			location.href="index.php";
-		}
 		
 		var cursor;
 		if (document.all) {
@@ -17,6 +15,10 @@
 		} else {
 		// Está utilizando MOZILLA/NETSCAPE
 		cursor='pointer';
+		}
+				
+		function cancelar() {
+			location.href="index.php";
 		}
 		
 		function limpiar() {

@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 $nombrecobrador=$_REQUEST["nombrecobrador"];
 $codcobrador=$_REQUEST["codcobrador"];

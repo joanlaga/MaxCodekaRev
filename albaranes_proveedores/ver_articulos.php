@@ -54,7 +54,7 @@ body {
 -->
 </style></head>
 <?php  
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 $codproveedor=$_REQUEST["codproveedor"];
 ?>
 <body onLoad="buscar()">

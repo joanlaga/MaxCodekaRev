@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 include ("../funciones/fechas.php");
 
 $paginas2=$_REQUEST["paginas2"];

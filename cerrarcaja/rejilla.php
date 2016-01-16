@@ -1,7 +1,17 @@
 <?php
 #bug falla funcion de imprimir
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 include ("../funciones/fechas.php");
+
+//inicializamos variables
+$fechainicio = 0;
+$minimo = 0;
+$maximo = 0;
+$neto = 0;
+$iva = 0;
+$total = 0;
+$contado = 0;
+$tarjeta = 0;
 
 $fechainicio=$_REQUEST["fechainicio"];
 if ($fechainicio<>"") { $fechainicio=explota($fechainicio); }
@@ -25,35 +35,40 @@ $rs_facturas=mysql_query($sel_facturas);
 $neto=$total-$total_iva;
 $iva=$total_iva;
 
-// Relación de cobros.
-//$sel_cobros="SELECT Sum(importe)        AS suma, cobros.codformapago, formapago.nombrefp FROM cobros Inner Join formapago ON cobros.codformapago = formapago.codformapago WHERE fechacobro='$fechainicio' GROUP BY codformapago ORDER BY codformapago ASC";
-$sel_cobros="SELECT Sum(cobros.importe) AS total_forma_pago, formapago.nombrefp          FROM cobros Inner Join formapago ON cobros.codformapago = formapago.codformapago WHERE cobros.fechacobro =  '$fechainicio' GROUP BY formapago.nombrefp ORDER BY formapago.codformapago ASC";
+// Relaciï¿½n de cobros.
+//$sel_cobros="SELECT Sum(importe) AS suma, cobros.codformapago, formapago.nombrefp FROM cobros Inner Join formapago ON cobros.codformapago = formapago.codformapago WHERE fechacobro='$fechainicio' GROUP BY codformapago ORDER BY codformapago ASC";
+$sel_cobros="SELECT Sum(cobros.importe) AS total_forma_pago, formapago.nombrefp FROM cobros Inner Join formapago ON cobros.codformapago = formapago.codformapago WHERE cobros.fechacobro =  '$fechainicio' GROUP BY formapago.nombrefp ORDER BY formapago.codformapago ASC";
 $rs_cobros=mysql_query($sel_cobros);
+
 $contador = 0;
 $total_cobros = 0;
 
-//if (mysql_num_rows($rs_cobros) > 0) { $contado=mysql_result($rs_cobros,0,"suma"); } else { $contado=0; }
-//if (mysql_num_rows($rs_cobros) > 1) { $tarjeta=mysql_result($rs_cobros,1,"suma"); } else { $tarjeta=0; }
+//print_r($rs_cobros);
+//echo mysql_result($rs_cobros,0,"suma");
+//echo mysql_result($rs_cobros,1,"suma");
+
+// if (mysql_num_rows($rs_cobros) > 0) { $contado=mysql_result($rs_cobros,0,"suma"); } else { $contado=0; }
+// if (mysql_num_rows($rs_cobros) > 1) { $tarjeta=mysql_result($rs_cobros,1,"suma"); } else { $tarjeta=0; }
 
 ?>
 <html>
-	<head>
-		<title>Cierre Caja</title>
-		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">	
+<head>
+	<title>Cierre Caja</title>
+	<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 
 		<script type="text/javascript">
-				var cursor;
-					if (document.all) {
-						// Está utilizando EXPLORER
-						cursor='hand';
-					} else {
-						// Está utilizando MOZILLA/NETSCAPE
-						cursor='pointer';
-					}
+			var cursor;
+			if (document.all) {
+				// Estï¿½ utilizando EXPLORER
+				cursor='hand';
+			} else {
+				// Estï¿½ utilizando MOZILLA/NETSCAPE
+				cursor='pointer';
+			}
 
-				function imprimir(fechainicio,minimo,maximo,neto,iva,total,contado,tarjeta) {
-						location.href="../fpdf/cerrarcaja.php?fechainicio="+fechainicio+"&minimo="+minimo+"&maximo="+maximo+"&neto="+neto+"&iva="+iva+"&total="+total+"&contado="+contado+"&tarjeta="+tarjeta;	
-					}
+			function imprimir(fechainicio,minimo,maximo,neto,iva,total,contado,tarjeta) {
+				location.href="../funciones/fpdf/cerrarcaja.php?fechainicio="+fechainicio+"&minimo="+minimo+"&maximo="+maximo+"&neto="+neto+"&iva="+iva+"&total="+total+"&contado="+contado+"&tarjeta="+tarjeta;
+			}
 		</script>
 				
 	</head>
@@ -131,14 +146,24 @@ $total_cobros = 0;
                     <td align="right"><strong><?php echo number_format($total_cobros,2,".",","); ?></strong></td>
                   </tr>
                 </table>
-    </div>
-				<div id="botonBusquedaCC">
-					<div align="center">
-			  <img src="../images/botonimprimir.jpg" width="79" height="22" border="1" onClick="imprimir('<?php echo $fechainicio?>','<?php echo $minimo?>','<?php echo $maximo?>','<?php echo $neto?>','<?php echo $iva?>','<?php echo $total?>','<?php echo $contado?>','<?php echo $tarjeta?>')" onMouseOver="style.cursor=cursor">
-			</div>
-			</div>
-				</div>
 		</div>
-
+			<div id="botonBusquedaCC">
+				<div align="center">
+					<img src="../images/botonimprimir.jpg" width="79" height="22" border="1" 
+						onClick="imprimir(
+							'<?php  echo $fechainicio?>',
+							'<?php  echo $minimo?>',
+							'<?php  echo $maximo?>',
+							'<?php  echo $neto?>',
+							'<?php  echo $iva?>',
+							'<?php  echo $total?>',
+							'<?php  echo $contado?>',
+							'<?php  echo $tarjeta?>'
+						)" 
+					onMouseOver="style.cursor=cursor" >
+				</div>
+			</div>
+	</div>
+</div>
 	</body>
 </html>

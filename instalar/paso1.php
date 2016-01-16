@@ -46,17 +46,22 @@ global $DBpassword;
 global $DBname;
 	
 	
-if (file_exists( "../config.php" ) && filesize("../config.php") > 0.5) {
+if (file_exists( "../configuraciones/config.php" ) && filesize("../configuraciones/config.php") > 0.5) {
 	echo "Se encontró el archivo config.php </br>";
 	echo "En éste archivo se guardan las configuraciones para acceder a su base de datos</br>";
 	echo "Debe tener permisos de lectura escritura </br>";	
 	
-	require_once("../config.php");
+	require_once("../configuraciones/config.php");
 
 //	header( "Location: index.php" );
 
 //	exit();
-} ?>
+} else {
+	echo "NO Se encontró el archivo /configuraciones/config.php </br>";
+	echo "En éste archivo se guardan las configuraciones para acceder a su base de datos</br>";
+	echo "Debe tener permisos de lectura escritura </br>";	
+}
+ ?>
 
 <html>
 <head>

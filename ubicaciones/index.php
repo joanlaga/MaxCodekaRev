@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 @$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
@@ -45,7 +45,7 @@ if ($cadena_busqueda<>"") {
 		function imprimir() {
 			var codubicacion=document.getElementById("codubicacion").value;
 			var nombre=document.getElementById("nombre").value;
-			window.open("../fpdf/ubicaciones.php?codubicacion="+codubicacion+"&nombre="+nombre);
+			window.open("../funciones/fpdf/ubicaciones.php?codubicacion="+codubicacion+"&nombre="+nombre);
 		}
 		
 		function buscar() {

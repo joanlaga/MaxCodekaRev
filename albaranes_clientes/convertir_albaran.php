@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 include ("../funciones/fechas.php");
  
 $codalbaran=$_REQUEST["codalbaran"];
@@ -13,10 +13,10 @@ $fecha=implota($fecha);
 		<title>Principal</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<<script type="text/JavaScript" language="javascript" src="../funciones/validar.js"></script>
-		<link href="../calendario/calendar-blue.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" language="javascript" src="../calendario/calendar.js"></script>
-		<script type="text/javascript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
-		<script type="text/javascript" language="javascript" src="../calendario/calendar-setup.js"></script>
+		<link href="../funciones/calendario/calendar-blue.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" language="javascript" src="../funciones/calendario/calendar.js"></script>
+		<script type="text/javascript" language="javascript" src="../funciones/calendario/lang/calendar-sp.js"></script>
+		<script type="text/javascript" language="javascript" src="../funciones/calendario/calendar-setup.js"></script>
 		<script type="text/javascript">
 		
 		var cursor;

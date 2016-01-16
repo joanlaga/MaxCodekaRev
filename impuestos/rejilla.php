@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 $codimpuesto=$_REQUEST["codimpuesto"];
 $nombre=$_REQUEST["nombre"];

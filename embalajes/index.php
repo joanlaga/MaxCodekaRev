@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 @$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
@@ -36,7 +36,7 @@ if ($cadena_busqueda<>"") {
 		function imprimir() {
 			var codembalaje=document.getElementById("codembalaje").value;
 			var nombre=document.getElementById("nombre").value;
-			window.open("../fpdf/embalajes.php?codembalaje="+codembalaje+"&nombre="+nombre);
+			window.open("../funciones/fpdf/embalajes.php?codembalaje="+codembalaje+"&nombre="+nombre);
 		}
 		
 		function buscar() {

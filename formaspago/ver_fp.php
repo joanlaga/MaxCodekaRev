@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 
 $codformapago=$_REQUEST["codformapago"];
 $cadena_busqueda=$_REQUEST["cadena_busqueda"];

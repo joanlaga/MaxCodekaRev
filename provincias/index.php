@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 @$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
@@ -41,7 +41,7 @@ if ($cadena_busqueda<>"") {
 		function imprimir() {
 			var codprovincia=document.getElementById("codprovincia").value;
 			var nombreprovincia=document.getElementById("nombreprovincia").value;
-			window.open("../fpdf/provincia.php?codprovincia="+codprovincia+"&nombreprovincia="+nombreprovincia);
+			window.open("../funciones/fpdf/provincia.php?codprovincia="+codprovincia+"&nombreprovincia="+nombreprovincia);
 		}
 		
 		function buscar() {

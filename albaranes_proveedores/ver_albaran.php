@@ -1,5 +1,5 @@
 <?php  
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php"); 
 
 $codalbaran=$_REQUEST["codalbaran"];
@@ -34,7 +34,7 @@ $iva=mysql_result($rs_query,0,"iva");
 		}
 		
 		function imprimir(codalbaran,codproveedor) {
-			location.href="../fpdf/albaran_proveedor.php?codalbaran="+codalbaran+"&codproveedor="+codproveedor;
+			location.href="../funciones/fpdf/albaran_proveedor.php?codalbaran="+codalbaran+"&codproveedor="+codproveedor;
 		}
 		
 		</script>

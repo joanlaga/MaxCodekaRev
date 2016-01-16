@@ -5,7 +5,7 @@ header('Pragma: no-cache');
 <html>
 <head>
 </head>
-<?php  include ("../conectar.php"); 
+<?php  include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php");
 ?>
 <body>

@@ -20,7 +20,7 @@ function pon_prefijo(codfamilia,pref,nombre,precio,codarticulo) {
 
 </script>
 <?php  
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 $codproveedor=$_REQUEST["codproveedor"];
 $familia=$_REQUEST["cmbfamilia"];
 $referencia=$_REQUEST["referencia"];

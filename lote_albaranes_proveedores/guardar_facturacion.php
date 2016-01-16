@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php"); 
 
 $albaranes=$_REQUEST["albaranes"];
@@ -81,7 +81,7 @@ $query_comprobar="SELECT * FROM facturasp WHERE codfactura='$codfactura' AND cod
 			}
 			
 			function imprimir(codfactura,codproveedor) {
-				location.href="../fpdf/factura_proveedor.php?codfactura="+codfactura+"&codproveedor="+codproveedor;
+				location.href="../funciones/fpdf/factura_proveedor.php?codfactura="+codfactura+"&codproveedor="+codproveedor;
 			}
 			
 			</script>

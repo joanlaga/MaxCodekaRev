@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 include ("../funciones/fechas.php");
 
 $codcliente=$_REQUEST["codcliente"];

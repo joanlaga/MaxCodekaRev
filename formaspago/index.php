@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 @$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
@@ -52,7 +52,7 @@ if ($cadena_busqueda<>"") {
 		function imprimir() {
 			var codformapago=document.getElementById("codformapago").value;
 			var nombrefp=document.getElementById("nombrefp").value;
-			window.open("../fpdf/formaspago.php?codformapago="+codformapago+"&nombrefp="+nombrefp);
+			window.open("../funciones/fpdf/formaspago.php?codformapago="+codformapago+"&nombrefp="+nombrefp);
 		}
 		
 		function paginar() {

@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 @$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
@@ -45,7 +45,7 @@ if ($cadena_busqueda<>"") {
 		function imprimir() {
 			var codimpuesto=document.getElementById("codimpuesto").value;
 			var nombre=document.getElementById("nombre").value;
-			window.open("../fpdf/impuestos.php?codimpuesto="+codimpuesto+"&nombre="+nombre);
+			window.open("../funciones/fpdf/impuestos.php?codimpuesto="+codimpuesto+"&nombre="+nombre);
 		}
 		
 		function buscar() {

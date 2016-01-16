@@ -1,9 +1,8 @@
 <?php
 /* 
    MODULO OPTIMIZAR  Depuracion de la Base de Datos
-   Versión 1.0
+   Versiï¿½n 1.0
    Desarrollado por Antonio Pont  bajo licencia GPL.
- 
   
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,27 +19,105 @@
 	 
 	Modificaciones  : Grupo CodeKa Mx 
 	 
-	Fecha Liberación del código: 30/08/2008
+	Fecha Liberaciï¿½n del cï¿½digo: 30/08/2008
 	Argentina 
 	
 	*/
+
 header ("Expires: Thu, 27 Mar 1980 23:59:00 GMT"); //la pagina expira en una fecha pasada
 header ("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); //ultima actualizacion ahora cuando la cargamos
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 // Conexcion Base de Datos 
-     include ("../conectar.php"); 
+require_once("../configuraciones/conectar.php");
 
-// Tablas que serán afectadas por la depuración.
-$sql_opt="OPTIMIZE TABLE `albalinea` , `albalineap` , `albalineaptmp` , `albalineatmp` , `albaranes` , `albaranesp` , `albaranesptmp` , `albaranestmp` , `articulos` , `artpro` , `clientes` , `cobros` , `embalajes` , `entidades` , `factulinea` , `factulineap` , `factulineaptmp` , `factulineatmp` , `facturas` , `facturasp` , `facturasptmp` , `facturastmp` , `familias` , `formapago` , `impuestos` , `librodiario` , `pagos` , `proveedores` , `provincias` , `tabbackup` , `ubicaciones`";
+// Tablas que serï¿½n afectadas por la depuraciï¿½n.
+//$sql_opt="OPTIMIZE TABLE `albalinea` , `albalineap` , `albalineaptmp` , `albalineatmp` , `albaranes` , `albaranesp` , `albaranesptmp` , `albaranestmp` , `articulos` , `artpro` , `clientes` , `cobros` , `embalajes` , `entidades` , `factulinea` , `factulineap` , `factulineaptmp` , `factulineatmp` , `facturas` , `facturasp` , `facturasptmp` , `facturastmp` , `familias` , `formapago` , `impuestos` , `librodiario` , `pagos` , `proveedores` , `provincias` , `tabbackup` , `ubicaciones`";
 
-// Chequeo de la realización del proceso.
+$sql_opt="OPTIMIZE TABLE 
+	`albalinea`,
+	`albalineap`,
+	`albalineaptmp`,
+	`albalineatmp`,
+	`albaranes`,
+	`albaranesp`,
+	`albaranesptmp`,
+	`albaranestmp`,
+	`articulos`artpro`,
+	`artprotmp`,
+	`authteam`,
+	`authuser`,
+	`clientes`,
+	`cobradores`,
+	`cobros`,
+	`descuento`,
+	`docalbaran`,
+	`docfactura`,
+	`doclistado`,
+	`docparte`,
+	`docpresupuesto`,
+	`emails`,
+	`embalajes`,
+	`empresa`,
+	`entidades`,
+	`eventcal`,
+	`events`,
+	`factulinea`,
+	`factulineap`,
+	`factulineaperiod`,
+	`factulineaptmp`,
+	`factulineatmp`,
+	`facturas`,
+	`facturasp`,
+	`facturasperiod`,
+	`facturasptmp`,
+	`facturastmp`,
+	`familia`,
+	`familias`,
+	`formapago`,
+	`gastos`,
+	`gastoslinea`,
+	`mpuestos`,
+	`librodiario`,
+	`mail`,
+	`mailenviados`,
+	`nivel`,
+	`operarios`,
+	`pagos`,
+	`parametros`
+	`partelinea`,
+	`partes,
+	`pedidos`,
+	`pedidoslinea`,
+	`petroleo`,
+	`presupuestolinea`,
+	`presupuestos`,
+	`proveedores`,
+	`provincias`,
+	`series`,
+	`subfamilia`,
+	`tabbackup`,
+	`tempartpro`,
+	`temporales`,
+	`temporaleslinea`,
+	`tiendainfo`,
+	`tiendanoti`,
+	`tiendarecu`,
+	`ubicaciones`,
+	`uf`,
+	`useronline`,
+	`users`,
+	`user_list`,
+	`vendedores`,
+";
+
+// Chequeo de la realizaciï¿½n del proceso.
 if(mysql_query($sql_opt,$conexion))
 
-// Redireción en caso de confirmación de proceso.
+// Redireciï¿½n en caso de confirmaciï¿½n de proceso.
 {header("Location: index.php?mensaje=confirmar");}
 else
 
-// Redireción en caso de error.
+// Redireciï¿½n en caso de error.
 {header("Location: index.php?mensaje=error");}
 ?>

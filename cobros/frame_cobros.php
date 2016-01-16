@@ -1,7 +1,16 @@
 <?php 
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 include ("../funciones/fechas.php");
+
 $hoy=date("d/m/Y");
+/* echo "<pre>";
+print_r($_REQUEST);
+echo "</pre>";
+*/
+//@$cadena_busqueda=$_REQUEST["cadena_busqueda"];
+if (!isset($_REQUEST["cadena_busqueda"])) { $cadena_busqueda=""; } else { $cadena_busqueda=str_replace("",",",$_REQUEST["cadena_busqueda"]); }
+
+if (!isset($cadena_busqueda)) { $cadena_busqueda=""; } else { @$cadena_busqueda=str_replace("",",",$cadena_busqueda); }
 
 if ($_REQUEST["accion"]=="") { $accion=$_REQUEST["accion"]; } else { $accion=$_REQUEST["accion"]; }
 

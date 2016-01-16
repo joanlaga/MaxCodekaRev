@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 
 $codentidad=$_REQUEST["codentidad"];
 $cadena_busqueda=$_REQUEST["cadena_busqueda"];

@@ -1,0 +1,24 @@
+<?php
+//include_once(dirname(__FILE__).'/../config/eventInfoConfig.php');
+/*
+define(‘ROOT_PATH’, dirname(__FILE__).DIRECTORY_SEPARATOR.’maxcodekarev’);
+echo "</br>";
+echo dirname(__FILE__);
+echo "</br>";
+echo ROOT_PATH;
+$ruta= ROOT_PATH;
+
+//  [HTTP_REFERER] => http://localhost/git/maxcodekarev/ 
+// [DOCUMENT_ROOT] => /var/www/html 
+//echo "</br>";
+//print_r ($_SERVER);
+//echo "</br>";
+echo "</br>";
+$ruta = $_SERVER['HTTP_REFERER']."configuraciones/conectar.php";
+echo $ruta;
+echo "</br>";
+//dirname(__FILE__).DIRECTORY_SEPARATOR."/configuraciones/conectar.php");
+*/
+
+//require_once($_SERVER['HTTP_REFERER']."configuraciones/conectar.php");
+?>

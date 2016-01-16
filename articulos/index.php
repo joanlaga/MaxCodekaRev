@@ -8,7 +8,7 @@ echo "</BR><LARA>";
 header('Cache-Control: no-cache');
 header('Pragma: no-cache'); 
 
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 	if(!isset($_REQUEST ["cadena_busqueda"])){ 
 		$cadena_busqueda = "" ; 
@@ -63,7 +63,7 @@ include ("../conectar.php");
 			var proveedores=document.getElementById("cboProveedores").value;			
 			var familia=document.getElementById("cboFamilias").value;
 			var ubicacion=document.getElementById("cboUbicacion").value;
-			window.open("../fpdf/articulos.php?codarticulo="+codarticulo+"&referencia="+referencia+"&descripcion="+descripcion+"&proveedores="+proveedores+"&familia="+familia+"&ubicacion="+ubicacion);
+			window.open("../funciones/fpdf/articulos.php?codarticulo="+codarticulo+"&referencia="+referencia+"&descripcion="+descripcion+"&proveedores="+proveedores+"&familia="+familia+"&ubicacion="+ubicacion);
 		}
 		
 		function limpiar_busqueda() {

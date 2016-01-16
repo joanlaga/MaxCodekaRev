@@ -30,7 +30,7 @@ header ("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); //ultima actuali
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php");
 
 $denominacion=$_REQUEST["Adenominacion"];

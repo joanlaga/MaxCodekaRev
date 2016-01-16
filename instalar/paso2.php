@@ -1,42 +1,25 @@
 <?php 
- /*  
-  
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
+/*
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+echo "</br>";
+*/
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-	
-	Autores: Luis Ignacio Albacete
-			 Pedro Obregï¿½n Mejï¿½as
-			 Rubï¿½n D. Mancera Morï¿½n
-	
-	Fecha Liberaciï¿½n del cï¿½digo: 08/05/2008
-	MaxCodecaRev 2008 -- Murcia		 
-	
-	*/
-	
 	global $DBhostname;
-global $DBusername;
-global $DBpassword;
-global $DBname;
-	
+	global $DBusername;
+	global $DBpassword;
+	global $DBname;
 ?>
 <html>
 <head>
-<title>MaxCodecaRev 4.5</title>
+<title>MaxCodecaRev 1.00</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <?php  
+
 $mensaje="";
+
 function crear_db($DBname, $sqlfile='MaxCodecaRev.sql') {
 	mysql_select_db($DBname);
 	$mqr = @get_magic_quotes_runtime();
@@ -58,8 +41,10 @@ function crear_db($DBname, $sqlfile='MaxCodecaRev.sql') {
 function split_sql($sql) {
 	$sql = trim($sql);
 //	$sql = ereg_replace("\n#[^\n]*\n" , "\n", $sql);
-	$sql = preg_match( "/\n/", $sql); //jalg 2015-3
-	
+//	$sql = preg_match( "/\n/", $sql); //jalg 2015-3
+//echo "</br>";
+//echo $sql;
+//echo "</br>";
 	/*
 	ejemplo de cambio de ereg
 ereg('\.([^\.]*$)', $this->filename, $extension);
@@ -96,30 +81,6 @@ preg_match('/\.([^\.]*$)/', $this->filename, $extension);
 	}
 	return($ret);
 }
-
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-echo "</br>";
-
-/*
-Array
-(
-    [DBhostname] => localhost
-    [DBusername] => root
-    [DBpassword] => aldico
-    [DBname] => maxcodeka
-    [next] => Siguiente
-)
-
-
-global $Usuario;        
-global $Password;     
-global $Servidor;       
-global $BaseDeDatos;
-
-
-*/
 $DBhostname ="";
 $DBusername ="";
 $DBpassword ="";
@@ -136,7 +97,7 @@ if (!($mysql_link = @mysql_connect( $DBhostname, $DBusername, $DBpassword ))) {
 		$mensaje= "El usuario y la clave introducida son incorrectos<br>";
 		$correcto="no"; }
 if($DBname == "") {
-		$mensaje=$mensaje."El nombre de la base de datos está vacio<br>";
+		$mensaje=$mensaje."El nombre de la base de datos estï¿½ vacio<br>";
 		$correcto="no";
 	}
 if ($correcto=="si") {
@@ -149,17 +110,16 @@ if ($correcto=="si") {
 	$test = mysql_errno();
 
 	if ($test <> 0 && $test <> 1007) {
-		$mensaje= $mensaje."Error creando la base de datos. Error nï¿½: ".$test."<br>";
+		$mensaje= $mensaje."Error creando la base de datos. Error no: ".$test."<br>";
 		$correcto="no";
 	}
 	if ($correcto=="si")	{
 		
 		crear_db($DBname,'MaxCodecaRev.sql');
-		$mensaje=$mensaje."La instalación de MaxCodecaRev 1.0 se ha realizado con Éxito. El administrador inicial tiene como nombre admin y como clave admin";
+		$mensaje=$mensaje."La instalaciÃ³n de MaxCodecaRev 1.0 se ha realizado con Ã©xito. El administrador inicial tiene como nombre admin y como clave admin";
 		$fp = fopen("../config.php", "w"); 
 		if (!$fp)
-			die(" ERROR: No se tiene acceso a fichero de configuracion: config.php. Instalaciï¿½n a medias");
-
+			die(" ERROR: No se tiene acceso a fichero de configuracion: config.php. InstalaciÃ³n a medias");
 		$usuname="MaxCodecaRev";
 		$tbname="user_list";
 
@@ -181,35 +141,11 @@ if ($correcto=="si") {
 		fputs ($fp, "\r\n");		
 		fputs ($fp, "ob_end_clean(); \r\n");//jalg 
 		fputs ($fp, "?>\r\n"); 
-		
-/*
-<?php
-ob_start();
-// Variables para la conexión para la base de datos Mysql
-global $Usuario;        
-global $Password;     
-global $Servidor;       
-global $BaseDeDatos;
-
-
-$Usuario="root";					// Nombre de usuario de la base de datos
-$Password="aldico";				// Contraseña de la base de datos
-$Servidor="localhost";			// Servidor , generalmente localhost
-$BaseDeDatos="maxcodeka";		// Nombre de la base de datos
-
-$sql_tabla="user_list";			// tabña de los ususarios
-$Passwordtabla ="margarita";	// Password del administrador 
-$usuarios_sesion="factu";		// sesion
-
-ob_end_clean();
-?>
-*/
-		
-	//	fclose($fp);
+		fclose($fp);
 		
 //		chmod("../config.php",0777);
 /*		
-		$fp = fopen("../calendario/includes/settings.php", "w"); 
+		$fp = fopen("../funciones/calendario/includes/settings.php", "w"); 
 		if (!$fp)
 			die(" ERROR: No se tiene acceso a fichero de configuracion del calendario: settings.php. Instalaciï¿½n a medias");
 
@@ -230,7 +166,7 @@ ob_end_clean();
 		fputs ($fp, "?>\r\n"); 
 
 		fclose($fp);
-		chmod("../calendario/includes/settings.php",0777);
+		chmod("../funciones/calendario/includes/settings.php",0777);
 	} 	else 	{
 		$mensaje= $mensaje."Error la base de datos ya existe. Error nï¿½: ".$test."<br>";
 		$correcto="no";
@@ -246,20 +182,23 @@ ob_end_clean();
   <tr>
     <td width="65%">
 	<center>
-	  <p><font color="#FFFFFF" size="+2">
+	  <p><font size="+2">
 	    <?php  print $mensaje; 
-	if ($correcto=="no") { ?> <br>
-	    <a href="paso1.php">Atrï¿½s</a></font> 
+	if ($correcto=="no") { ?> 
+		<br>
+		<a href="paso1.php">AtrÃ¡s</a></font> 
 	      <?php  }
 	  if ($correcto=="si") { ?>
 	      <br>
 	    </p>
-	  <p>Recuerda usar el asistente de instalacion la primera vez que uses MaxCodecaRev.</p>
+	  <p>Recuerda usar el asistente de instalaciÃ³n la primera vez que uses MaxCodecaRev.</p>
 	  <p>&nbsp;</p>
 	  <p>lo encontraras en el menu / utilidades / configuraciones / asistente<br>
 	    
 	    <?php  }?>
-	    </font></font>
+
+<a href="paso3.php">Continuar</a>
+
 	    </p>
 	</center>
     </td>

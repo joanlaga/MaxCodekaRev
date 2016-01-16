@@ -2,8 +2,8 @@
 	header('Cache-Control: no-cache');
 	header('Pragma: no-cache'); 
 
-	include ("../conectar.php"); 
-	include ("../funciones/fechas.php"); 
+	include ("../configuraciones/conectar.php"); 
+	include ("../funciones/fechas.php");
 /*
 echo "<pre>";
 print_r($_REQUEST);
@@ -73,11 +73,7 @@ Notice: Undefined variable: modificar_ticket in /var/www/html/maxcodeka/articulo
 [barras] => 013803078411 ) 
   <td colspan="2"><?php echo "<img src='../barcode/barcode.php?encode=EAN-13&bdata=".$codigobarras."&height=50&scale=2&bgcolor=%23FFFFEC&color=%23333366&type=png'>" ?></td>
 */
-/*
-echo "<pre>";
-print_r($_REQUEST);
-echo "</pre>";
-*/
+
 include("../barcode/barcode.php");
 
 ?>
@@ -85,9 +81,16 @@ include("../barcode/barcode.php");
 	<head>
 		<title>Principal</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
+
+		<link href="../funciones/calendario/calendar-blue.css" rel="stylesheet" type="text/css">
+
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/calendar.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/lang/calendar-sp.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/calendar-setup.js"></script>
+
+
 		<script type="text/javascript" src="../funciones/validar.js"></script>
 		<script type="text/javascript">
-		
 		var cursor;
 		if (document.all) {
 		// Está utilizando EXPLORER
@@ -128,7 +131,6 @@ include("../barcode/barcode.php");
 			document.formulario.Aprecio_ticket.options[0].selected = true;
 			document.formulario.Amodif_descrip.options[0].selected = true;
 		}
-		
 		</script>
 	</head>
 	<body>
@@ -157,7 +159,7 @@ include("../barcode/barcode.php");
 					  ?>
 						<tr>
 							<td width="11%">Familia</td>
-							<td colspan="2"><select id="cboFamilias" name="AcboFamilias" class="comboGrande">
+ 							<td colspan="2"><select id="cboFamilias" name="AcboFamilias" class="comboGrande"> 
 							
 								<option value="0">Seleccione una familia</option>
 								<?php
@@ -294,16 +296,18 @@ include("../barcode/barcode.php");
 				        </tr>
 						<tr>
 							<td>Fecha de alta</td>
-							<td colspan="2"><input NAME="fecha" type="text" class="cajaPequena" id="fecha" size="10" maxlength="10" readonly value="<?php echo implota(mysql_result($rs_query,0,"fecha_alta"))?>"> <img src="../images/calendario.png" name="Image1" id="Image1" width="16" height="16" border="0" id="Image1" onMouseOver="this.style.cursor='pointer'">
-        <script type="text/javascript">
-					Calendar.setup(
-					  {
-					inputField : "fecha",
-					ifFormat   : "%d/%m/%Y",
-					button     : "Image1"
-					  }
-					);
-		</script></td>
+							<td colspan="2">
+							<input NAME="fecha" type="text" class="cajaPequena" id="fecha" size="10" maxlength="10" readonly value="<?php echo implota(mysql_result($rs_query,0,"fecha_alta"))?>"> 
+							<img src="../images/calendario.png" name="Image1" id="Image1" width="16" height="16" border="0" id="Image1" onMouseOver="this.style.cursor='pointer'">
+        	<script type="text/javascript">
+			Calendar.setup({
+				inputField : "fecha",
+				ifFormat   : "%d/%m/%Y",
+				button     : "Image1"
+			}
+			);
+		</script>
+	</td>
 					    </tr>
 						 <?php
 						$embalaje=mysql_result($rs_query,0,"codembalaje");
@@ -388,7 +392,10 @@ include("../barcode/barcode.php");
 						  <td colspan="2"><input NAME="barras" type="text" class="cajaMedia" id="barras" size="10" maxlength="13" value="<?php echo mysql_result($rs_query,0,"codigobarras")?>"></td>
 				      </tr>
                   <tr>
-                        <td>Codigo de barras Imagen</td>
+                        <td>Codigo de barras Imagen
+</br>
+   NO EDITABLE, SE GENERA AUTOMATICO
+</td>
 <!-- 
                         <td width="20%" rowspan="11"  align="center" valign="top" >
 									<?php echo  "<img src='../barcode/barcode.php?encode=EAN-13&bdata=".$codigobarras."&height=50&scale=2&bgcolor=%23FFFFEC&color=%23333366&type=png'>" ?> 
@@ -400,28 +407,19 @@ include("../barcode/barcode.php");
 					  </tr>					  
 					  <tr>
                         <?php $foto_name = mysql_result($rs_query,0,"imagen"); ?>
-                        <td>Imagen del producto[Formato jpg] [200x200]</td>
+                        <td>  Imagen del producto[Formato jpg] [200x200]</td>
                         	<?php   if (is_file('../fotos/'.$foto_name)){  
-													$foto_name1 = "../fotos/". $foto_name ;
-									  			}else {
-													$foto_name1 = "../fotos/no_foto_arti.png";
-												}
-									?> 
-							<td width="27%" rowspan="11" align="left" valign="top">
-							<img src="<?php echo $foto_name1 ;?>" width="160px" height="140px" border="1">
+						$foto_name1 = "../fotos/". $foto_name ;
+					}else {
+						$foto_name1 = "../fotos/no_foto_arti.png";
+					}
+				?> 
+					<td width="27%" rowspan="11" align="left" valign="top">
+					<img src="<?php echo $foto_name1 ;?>" width="160px" height="140px" border="1">
                         	<?php // echo "</br>" . $foto_name1;?>
-							</td>
-						</tr>
-<!-- otra forma de ver la imagen 
-                  <tr>
-                        <td 
-                        width="20%" align="left" valign="top"><img src="../fotos/<?php echo mysql_result($rs_query,0,"imagen")?>" width="160px" height="140px" border="1">
-                        <?php echo mysql_result($rs_query,0,"imagen")?>
-                        </td>
-					  </tr>
- -->
-
-				</table>
+					</td>
+					</tr>
+		</table>
                       
                     </div> <!-- frmbusqueda> -->
                     <div id="botonBusqueda">

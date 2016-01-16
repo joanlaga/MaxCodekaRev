@@ -1,4 +1,4 @@
-<?php include ("../conectar.php"); 
+<?php include ("../configuraciones/conectar.php"); 
 
 $codimpuesto=$_REQUEST["codimpuesto"];
 

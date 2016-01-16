@@ -1,5 +1,5 @@
 <?php  
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php"); 
 
 $accion=$_REQUEST["accion"];
@@ -92,7 +92,7 @@ if ($accion=="alta") {
 		}
 		
 		function imprimir(codfactura) {
-			window.open("../fpdf/factura.php?codfactura="+codfactura);
+			window.open("../funciones/fpdf/factura.php?codfactura="+codfactura);
 		}
 		
 		function efectuarpago(codfactura,codcliente,importe) {

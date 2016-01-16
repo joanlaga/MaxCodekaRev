@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 $codubicacion=$_REQUEST["codubicacion"];
 $nombre=$_REQUEST["nombre"];

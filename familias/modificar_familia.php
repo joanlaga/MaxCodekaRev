@@ -1,6 +1,7 @@
-<?php  include ("../conectar.php"); 
+<?php  include ("../configuraciones/conectar.php"); 
 
 $codfamilia=$_REQUEST["codfamilia"];
+$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
 $query="SELECT * FROM familias WHERE codfamilia='$codfamilia'";
 $rs_query=mysql_query($query);

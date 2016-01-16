@@ -1,8 +1,10 @@
 <?php
-include ("../conectar.php");
+require_once("../configuraciones/conectar.php");
 
-@$cadena_busqueda=$_REQUEST["cadena_busqueda"];
-if (!isset($cadena_busqueda)) { $cadena_busqueda=""; } else { $cadena_busqueda=str_replace("",",",$cadena_busqueda); }
+if (!isset($_REQUEST["cadena_busqueda"])) { $cadena_busqueda = ""; } else { $cadena_busqueda=str_replace("",",",$_REQUEST["cadena_busqueda"]); }
+
+//@$cadena_busqueda=$_REQUEST["cadena_busqueda"];
+//if (!isset($cadena_busqueda)) { $cadena_busqueda=""; } else { $cadena_busqueda=str_replace("",",",$cadena_busqueda); }
 
 if ($cadena_busqueda<>"") {
 	$array_cadena_busqueda=split("~",$cadena_busqueda);
@@ -52,7 +54,7 @@ if ($cadena_busqueda<>"") {
 			var provincia=document.getElementById("cboProvincias").value;
 			var localidad=document.getElementById("localidad").value;
 			var telefono=document.getElementById("telefono").value;
-			window.open("../fpdf/clientes.php?codcliente="+codcliente+"&nombre="+nombre+"&nif="+nif+"&provincia="+provincia+"&localidad="+localidad+"&telefono="+telefono);
+			window.open("../funciones/fpdf/clientes.php?codcliente="+codcliente+"&nombre="+nombre+"&nif="+nif+"&provincia="+provincia+"&localidad="+localidad+"&telefono="+telefono);
 		}
 		
 		function buscar() {
@@ -87,7 +89,10 @@ if ($cadena_busqueda<>"") {
 		function limpiar() {
 			document.getElementById("form_busqueda").reset();
 		}
-		
+
+
+		var miPopup
+
 		function abreVentana(){
 			miPopup = window.open("ventana_clientes.php","miwin","width=700,height=380,scrollbars=yes");
 			miPopup.focus();

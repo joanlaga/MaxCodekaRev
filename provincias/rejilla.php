@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 $nombreprovincia=$_REQUEST["nombreprovincia"];
 $codprovincia=$_REQUEST["codprovincia"];

@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 @$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
@@ -21,10 +21,10 @@ $titulo="Clientes";
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-		<link href="../calendario/calendar-blue.css" rel="stylesheet" type="text/css">
-		<script type="text/JavaScript" language="javascript" src="../calendario/calendar.js"></script>
-		<script type="text/JavaScript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
-		<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
+		<link href="../funciones/calendario/calendar-blue.css" rel="stylesheet" type="text/css">
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/calendar.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/lang/calendar-sp.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/calendar-setup.js"></script>
 		<script type="text/javascript">
 		
 		var cursor;
@@ -213,7 +213,7 @@ $titulo="Clientes";
 			var fechainicio=document.getElementById("fechainicio").value;
 			var fechafin=document.getElementById("fechafin").value;
 			var paginas2=document.getElementById("paginas2").value;
-			window.open("../fpdf/libro_diario.php?fechainicio="+fechainicio+"&fechafin="+fechafin+"&paginas2="+paginas2);
+			window.open("../funciones/fpdf/libro_diario.php?fechainicio="+fechainicio+"&fechafin="+fechafin+"&paginas2="+paginas2);
 						}  
 
 		</script>

@@ -1,0 +1,167 @@
+/* CSS Document */
+body {
+    font-family:helvetica;
+    font-size:12px;
+    color:#666666;
+    text-align:center; /*aqui mandamos a centrar todo el contenido*/ 
+}
+
+#col_contenedor{
+    width:100%; /*ancho total de la pagina*/ 
+    
+    background-color:#FFF8F0;
+    margin-top:20px;
+	margin-left:25px; /*10px arriba y abajo, y auto a los lados, para los navegadores nuevos es suficiente para centrar la pagina*/ 
+	/*
+		margin: 30px 10px 10px;
+		border:1px solid #333333; /*encadeno los 3 atributos claves del borde en una sola linea, ahorrando codigo XD*/ 
+	*/
+    text-align:left; /*aqui alineamos todo de nuevo a la izquierda, pero dentro del contenedor*/ 
+}
+
+#col_columna_izquierda {
+    /*margin:-10px 10px 10px 30px; /*para que no se pegue al borde*/ 
+    /*padding:10px; algo de relleno*/
+    width:32%; /*este ancho es para que cuadre con el texto*/ 
+    height:650px; /*idem*/ 
+    /*border:1px solid #333333; 
+    background-color:#DDCCAA;  decoracion*/
+    float:left; /*lo flotamos a la izquierda*/ 
+    display:inline; /*(*)*/ 
+}
+
+#col_columna_derecha{
+    margin-left: 430px;
+    margin-top: 10px;
+	width:60%; /*este ancho es para que cuadre con el texto*/ 
+    height:1000px; /*idem*/ 
+	/*border:1px solid #333333;
+	border:1px solid #333333; decoracion
+    background-color:#CC6600; more*/ 
+    float:right; /*lo flotamos a la izquierda*/ 
+    position: absolute;
+} 
+
+#col_pagina {
+    background-color: #FFFFFF;
+    font-family: helvetica;
+    font-size: 8pt;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+#col_zonaContenido {
+    height: 450px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#col_tituloForm {
+	position:relative;
+	width:98%;
+}
+
+
+#col_frmBusqueda {
+	background-color: #F5F5F5;
+    border-color: #DCDCDC #696969 #696969 #DCDCDC;
+    border-style: solid;
+    border-width: 1px;
+    position: relative;
+    width: 97%;
+}
+
+#col_lineaResultadoVTASM {
+    background-color: #F5F5F5;
+    border-color: #DCDCDC #696969 #696969 #DCDCDC;
+    border-style: solid;
+    border-width: 1px;
+    height: 357px;
+    left: 10px;
+    position: absolute;
+    top: 55%;
+    width: 97%;
+}
+#col_frmResultadoVTASM {
+    left: 10px;
+    position: absolute;
+    top: 51%;
+    width: 97%;
+}
+
+#col_lineaResultadoProducto {
+    background-color: #F5F5F5;
+    border-color: #DCDCDC #696969 #696969 #DCDCDC;
+    border-style: solid;
+    border-width: 1px;
+    /*height: 100%;*/
+    position: absolute;
+    width: 33%;
+}
+
+#col_tituloForm_productos {
+    position: relative;
+    width: 105%;
+}
+
+#col_frmBusqueda2 {
+    background-color: #F5F5F5;
+    border-color: #DCDCDC #696969 #696969 #DCDCDC;
+    position: relative;
+    top: 5%;
+    width: 100%;
+	height: 100%;
+}
+#col_mensajeMinimo {
+	background-color: #fff;
+	color:#FF0000;
+	text-transform:uppercase;
+	text-align:center;
+	font-weight:bold;
+	height:20px;
+	vertical-align:middle;
+}
+#frmTotalFactura {
+	position:relative; 
+	top:5%;
+	left:1%;
+	width:80%;
+	background-color:#f5f5f5;
+	border-top:solid 1px #dcdcdc;
+	border-left:solid 1px #dcdcdc;
+	border-right:solid 1px #696969;
+	border-bottom:solid 1px #696969;
+	color:#fff;
+	text-transform:uppercase;
+	text-align:center;
+	font-weight:bold;
+	height:20px
+}
+.impresion {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+}
+
+#pop {
+   z-index:2;
+   position:absolute;
+   border: 1px solid #333333;
+   text-align:center;
+   background:#000000;
+}
+#cerrar {
+   float:right;
+   margin-right:5px;
+   cursor:pointer;
+   font:Verdana, Arial, Helvetica, sans-serif;
+   font-size:12px;
+   font-weight:bold;
+   color:#FFFFFF;
+   background-color:#666666;
+   width:12px;
+   position:relative;
+   margin-top:-1px;
+   text-align:center;
+}

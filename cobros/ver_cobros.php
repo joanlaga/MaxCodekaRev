@@ -1,7 +1,8 @@
 <?php  
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 include ("../funciones/fechas.php");
  
+$codfactura=$_REQUEST["codfactura"];
 $codfactura=$_REQUEST["codfactura"];
 
 $select_facturas="SELECT clientes.codcliente,clientes.nombre,facturas.codfactura,estado,fechavencimiento,totalfactura FROM facturas LEFT JOIN cobros ON facturas.codfactura=cobros.codfactura INNER JOIN clientes ON facturas.codcliente=clientes.codcliente WHERE facturas.codfactura='$codfactura'";
@@ -18,11 +19,11 @@ $aportaciones=mysql_result($rs_cobros,0,"aportaciones");
 	<head>
 		<title>Principal</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-		<link href="../calendario/calendar-blue.css" rel="stylesheet" type="text/css">
+		<link href="../funciones/calendario/calendar-blue.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript" src="../funciones/validar.js"></script>		
-		<script type="text/JavaScript" language="javascript" src="../calendario/calendar.js"></script>
-		<script type="text/JavaScript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
-		<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/calendar.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/lang/calendar-sp.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/calendar-setup.js"></script>
 		<script type="text/javascript">
 		var cursor;
 		if (document.all) {

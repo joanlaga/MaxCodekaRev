@@ -1,5 +1,5 @@
 <link href="../css/estilo.css" rel="stylesheet" type="text/css">	
-<?
+<?php 
     /*  
   
     This program is free software; you can redistribute it and/or modify
@@ -18,7 +18,7 @@
 	
 	Autores: Luis Ignacio Albacete
 
-	Fecha Liberación del código: 25/10/2007
+	Fecha Liberaciï¿½n del cï¿½digo: 25/10/2007
 	Factusyn 2007 -- Murcia		 
 	
 	*/
@@ -39,7 +39,7 @@ $resultado = mysql_query($consulta, $conexion);
 				 {
 			       if (! copy ($foto, "imagenes/logo/magua/".$foto_name)) 
 		            {
-		              echo "<h2>¡¡¡ No ha seleccionado ningún Fondo ¡¡¡</h2>\n";
+		              echo "<h2>ï¿½ï¿½ï¿½ No ha seleccionado ningï¿½n Fondo ï¿½ï¿½ï¿½</h2>\n";
 			        };
 				};
 
@@ -49,7 +49,7 @@ $resultado = mysql_query($consulta, $conexion);
 				  //
 				  $loguito="logo.jpg";
                   $cabecera="documentos.png";
-                  $texto="Diseño de Albaran modificado correctamente";
+                  $texto="Diseï¿½o de Albaran modificado correctamente";
 				
                   $actionimp="";
                   $namevar="";
@@ -57,6 +57,6 @@ $resultado = mysql_query($consulta, $conexion);
                   $valueimp="";
 				
                   $actionv="disenodocumentos.php";
-                  $valuev="Modificacion de Diseño Albaran";
+                  $valuev="Modificacion de Diseï¿½o Albaran";
                   include ("../configuraciones/mensaje.php");		
 ?>				  

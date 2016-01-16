@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 
 $codubicacion=$_REQUEST["codubicacion"];
 //$cadena_busqueda=$_REQUEST["cadena_busqueda"];

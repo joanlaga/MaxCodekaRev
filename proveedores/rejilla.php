@@ -1,5 +1,6 @@
 <?php
-include ("../conectar.php");
+require_once("../configuraciones/conectar.php");
+//require_once($_SERVER['HTTP_REFERER']."configuracion../configuraciones/conectar.php");
 
 $codproveedor=$_REQUEST["codproveedor"];
 $nombre=$_REQUEST["nombre"];
@@ -29,6 +30,15 @@ $filas=mysql_result($rs_busqueda,0,"filas");
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript">
 		
+		var cursor;
+		if (document.all) {
+		// Está utilizando EXPLORER
+		cursor='hand';
+		} else {
+		// Está utilizando MOZILLA/NETSCAPE
+		cursor='pointer';
+		}
+
 		function ver_proveedor(codproveedor) {
 			parent.location.href="ver_proveedor.php?codproveedor=" + codproveedor + "&cadena_busqueda=<?php echo $cadena_busqueda?>";
 		}

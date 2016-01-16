@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+require_once("../configuraciones/conectar.php");
 
 $codproveedor=$_REQUEST["codproveedor"];
 $cadena_busqueda=$_REQUEST["cadena_busqueda"];

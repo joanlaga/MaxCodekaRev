@@ -18,7 +18,7 @@ function limpiar() {
 }
 
 </script>
-<?php include ("../conectar.php"); ?>
+<?php include ("../configuraciones/conectar.php"); ?>
 <body>
 <?php 
 	$codproveedor=$_REQUEST["codproveedor"];

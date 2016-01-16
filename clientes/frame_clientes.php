@@ -7,7 +7,16 @@ header('Pragma: no-cache');
 <link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 </head>
 <script type="text/javascript">
-
+		
+		var cursor;
+		if (document.all) {
+		// Está utilizando EXPLORER
+		cursor='hand';
+		} else {
+		// Está utilizando MOZILLA/NETSCAPE
+		cursor='pointer';
+		}
+		
 function pon_prefijo(pref,nombre,nif) {
 	parent.opener.document.form_busqueda.codcliente.value=pref;
 	parent.opener.document.form_busqueda.nombre.value=nombre;
@@ -16,7 +25,7 @@ function pon_prefijo(pref,nombre,nif) {
 }
 
 </script>
-<?php include ("../conectar.php"); ?>
+<?php require_once("../configuraciones/conectar.php"); ?>
 <body>
 <?php 
 	

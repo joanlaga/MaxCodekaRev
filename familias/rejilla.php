@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 $codfamilia=$_REQUEST["codfamilia"];
 $nombre=$_REQUEST["nombre"];

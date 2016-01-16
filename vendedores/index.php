@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 //$cadena_busqueda=$_REQUEST["cadena_busqueda"];
         if(!isset($_REQUEST["cadena_busqueda"])){ 
@@ -47,7 +47,7 @@ if ($cadena_busqueda<>"") {
 		function imprimir() {
 			var codvendedor=document.getElementById("codvendedor").value;
 			var nombrevendedor=document.getElementById("nombrevendedor").value;
-			window.open("../fpdf/vendedores.php?codvendedor="+codvendedor+"&nombrevendedor="+nombrevendedor);
+			window.open("../funciones/fpdf/vendedores.php?codvendedor="+codvendedor+"&nombrevendedor="+nombrevendedor);
 		}
 		
 		function buscar() {

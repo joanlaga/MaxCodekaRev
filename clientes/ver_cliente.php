@@ -1,11 +1,11 @@
 <?php 
-include ("../conectar.php"); 
+require_once("../configuraciones/conectar.php");
 
-$codcliente=$_REQUEST["codcliente"];
+$codcliente = $_REQUEST["codcliente"];
 $cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
-$query="SELECT * FROM clientes WHERE codcliente='$codcliente'";
-$rs_query=mysql_query($query);
+$query = "SELECT * FROM clientes WHERE codcliente='$codcliente'";
+$rs_query = mysql_query($query);
 
 ?>
 
@@ -14,22 +14,21 @@ $rs_query=mysql_query($query);
 		<title>Principal</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript">
+			var cursor;
+			if (document.all) {
+				// Está utilizando EXPLORER
+				cursor='hand';
+			} else {
+				// Está utilizando MOZILLA/NETSCAPE
+				cursor='pointer';
+			}
 		
-		function aceptar() {
-			location.href="index.php?cadena_busqueda=<?php echo $cadena_busqueda?>";
-		}
-		
-		var cursor;
-		if (document.all) {
-		// Está utilizando EXPLORER
-		cursor='hand';
-		} else {
-		// Está utilizando MOZILLA/NETSCAPE
-		cursor='pointer';
-		}
-		
+			function aceptar() {
+				location.href="index.php?cadena_busqueda=<?php echo $cadena_busqueda?>";
+			}
 		</script>
 	</head>
+
 	<body>
 		<div id="pagina">
 			<div id="zonaContenido">
@@ -39,7 +38,7 @@ $rs_query=mysql_query($query);
 					<table class="fuente8" width="98%" cellspacing=0 cellpadding=3 border=0>
 						<tr>
 							<td width="15%">RFC / RUT </td>
-							<td width="85%" colspan="2"><?php echo $nif?></td>
+							<td width="85%" colspan="2"><?php echo mysql_result($rs_query,0,"nif") ?></td>
 					    </tr>
 						<tr>
 							<td width="15%">Nombre</td>

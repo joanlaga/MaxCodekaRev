@@ -16,7 +16,7 @@ function pon_prefijo(pref,nombre,nif) {
 }
 
 </script>
-<?php include ("../conectar.php"); ?>
+<?php include ("../configuraciones/conectar.php"); ?>
 <body>
 <?
 	$codcliente=$_REQUEST["codcliente"];

@@ -21,7 +21,7 @@ function eliminar_linea(codfacturatmp,numlinea,importe)
 <link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 
 <?php  
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 $codfacturatmp=$_REQUEST["codfacturatmp"];
 $retorno=0;

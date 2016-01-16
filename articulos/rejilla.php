@@ -1,5 +1,6 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
+//include ("../rutinasnew/phpnoerror.php"); 
 
 /*
 echo "<pre>";

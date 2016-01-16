@@ -1,4 +1,6 @@
-<?php include ("../conectar.php"); 
+<?php 
+require_once("../configuraciones/conectar.php");
+//include ("../configuraciones/conectar.php"); 
 
 $codproveedor=$_REQUEST["codproveedor"];
 
@@ -13,10 +15,6 @@ $rs_query=mysql_query($query);
 		<script type="text/javascript" src="../funciones/validar.js"></script>
 		<script type="text/javascript">
 		
-		function cancelar() {
-			location.href="index.php";
-		}
-		
 		var cursor;
 		if (document.all) {
 		// Está utilizando EXPLORER
@@ -24,6 +22,10 @@ $rs_query=mysql_query($query);
 		} else {
 		// Está utilizando MOZILLA/NETSCAPE
 		cursor='pointer';
+		}
+
+		function cancelar() {
+			location.href="index.php";
 		}
 		
 		function limpiar() {

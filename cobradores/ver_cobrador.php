@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 
 $codcobrador=$_REQUEST["codcobrador"];
 $cadena_busqueda=$_REQUEST["cadena_busqueda"];

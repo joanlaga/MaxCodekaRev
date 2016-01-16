@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php"); 
 
 $albaranes=$_REQUEST["albaranes"];
@@ -71,7 +71,7 @@ $rs_alb=mysql_query($act_alb);
 		}
 		
 		function imprimir(codfactura) {
-			window.open("../fpdf/factura.php?codfactura="+codfactura);
+			window.open("../funciones/fpdf/factura.php?codfactura="+codfactura);
 		}
 		
 		</script>

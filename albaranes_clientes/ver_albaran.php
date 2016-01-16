@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php"); 
 
 $codalbaran=$_REQUEST["codalbaran"];
@@ -33,7 +33,7 @@ $iva=mysql_result($rs_query,0,"iva");
 		}
 		
 			function imprimir(codalbaran) {
-				window.open("../fpdf/albaran.php?codalbaran="+codalbaran);
+				window.open("../funciones/fpdf/albaran.php?codalbaran="+codalbaran);
 			}
 		</script>
 

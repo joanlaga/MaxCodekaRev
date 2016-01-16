@@ -1,6 +1,8 @@
-<?php include ("../conectar.php"); 
+<?php 
+require_once("../configuraciones/conectar.php");
 
 $codcliente=$_REQUEST["codcliente"];
+$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
 $query="SELECT * FROM clientes WHERE codcliente='$codcliente'";
 $rs_query=mysql_query($query);
@@ -12,11 +14,7 @@ $rs_query=mysql_query($query);
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript" src="../funciones/validar.js"></script>
 		<script type="text/javascript">
-		
-		function cancelar() {
-			location.href="index.php?cadena_busqueda=<?php echo $cadena_busqueda?>";
-		}
-		
+
 		var cursor;
 		if (document.all) {
 		// Está utilizando EXPLORER
@@ -24,6 +22,11 @@ $rs_query=mysql_query($query);
 		} else {
 		// Está utilizando MOZILLA/NETSCAPE
 		cursor='pointer';
+		}
+		
+		function cancelar() {
+			location.href="index.php?cadena_busqueda=<?php echo $cadena_busqueda?>"; 
+
 		}
 		
 		function limpiar() {

@@ -16,7 +16,7 @@ header('Pragma: no-cache');
 
 </script>
 <?php 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 	$consulta="SELECT * FROM clientes WHERE borrado=0 ORDER BY codcliente ASC";
 	$rs_tabla = mysql_query($consulta);
 	$nrs=mysql_num_rows($rs_tabla);

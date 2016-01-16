@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php");
 
 $codproveedor=$_REQUEST["codproveedor"];
 $cadena_busqueda=$_REQUEST["cadena_busqueda"];
@@ -27,7 +27,6 @@ $rs_query=mysql_query($query);
 		function aceptar() {
 			location.href="index.php?cadena_busqueda=<?php echo $cadena_busqueda?>";
 		}
-		
 		</script>
 	</head>
 	<body>

@@ -1,41 +1,27 @@
 <?php 
     /*  
-    Este es un programa desarrollado bajo el concepto de Software Libre y Uds.,
-	pueden modificarlo y redistribuirlo bajo los terminos de la GNU General 
-	Public License como ha sido publicado por Free Software Foundation;
-	ya sea bajo la Licencia version 2 o cualquier Licencia posterior.
-		Autores: Ignacio Albacete
-			 Pedro Obreg�n Mej�as
-			 Rub�n D. Mancera Mor�n
-		Fecha Liberaci�n del c�digo: 15/10/2007
-		Codeka 2007 -- Murcia	
-	Este codigo ha sido modificado parcialmente por
-		Fecha Liberaci�n del c�digo: 28/08/2010
-		Grupo  CodeKa Mx --- Mexico , Chile
-				Manuel Avalos
-				Arturo Fertilio
-				Helio Trincado 	 
-
-	Este codigo ha sido modificado parcialmente por www.MaxCode.com.ar
-		Fecha Liberaci�n del c�digo: 29/03/2011
-		Grupo  CodeKa Max --- Argentina
-	                      Joaquin R. Rizer
-	Este codigo ha sido modificado parcialmente por joanlaga@hotmail.com
-			José Antonio Lara Galindo
-				Fecha Liberación del cóigo: 2014
-		--------------
 	*/
-	session_start(); //jalg 3-2015
+
+//require_once("./login/login.php");
+require_once("./configuraciones/globales.php");
+require_once(OBIB_CONF."conectar.php");
+//require_once("./configuraciones/conectar.php");
+
+//require_once("./popupmsg/popup.class.php");
+session_start(); //jalg 3-2015
 header ("Expires: Thu, 27 Mar 1980 23:59:00 GMT"); //la pagina expira en una fecha pasada
 header ("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); //ultima actualizacion ahora cuando la cargamos
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 
-include("conectar.php");
-include_once("./popupmsg/popup.class.php");
+/*
+Lanza un pop
+$msg2 = new popupMsg (150,30,450,100,"CodeKa Mx version 16 Mod-02","Este programa sera enviado a quien lo solicite en el Foro de la pagina WEB a contar del dia 21 de Noviembre 2010...","OK",12000);
+$msg2->populateHTML();
+$msg2->PrintMsg();
+*/
 
 // Normal Usage  , with time out.
-
 $HeadlineStyleArr["text-align"] = "left";
 $HeadlineStyleArr["color"] = "purple"; 
 $HeadlineStyleArr["background-color"] = "silver";
@@ -50,6 +36,9 @@ $TextStyleArr["color"] = "silver";
 $TextStyleArr["background-color"] = "purple";
 $TextStyleArr["font-weight"] = "bold";
 $TextStyleArr["font-family"] = "arial, sans-serif";
+
+
+//    <link href="estilos/boot-----strap------.css" rel="stylesheet"  type="text/css">
 ?>
 
 <html>
@@ -61,15 +50,14 @@ $TextStyleArr["font-family"] = "arial, sans-serif";
   <script type="text/javascript" src="menu/JSCookMenu.js"></script>
   <link rel="stylesheet" href="menu/theme.css" type="text/css">
   <script type="text/javascript" src="menu/theme.js"></script>
-
   <script type="text/javascript">
-<!--
+<!---
 var MenuPrincipal = [
 	[null,'Inicio',null,null,'Inicio',
-		[null,'Reloj','./reloj/ureloj.php','principal','Reloj'],
-		[null,'Calculadora','./calculadora/ucalculadora.php','principal','Calculadora'],
+		[null,'Reloj','./funciones//reloj/ureloj.php','principal','Reloj'],
+		[null,'Calculadora','./funciones/calculadora/ucalculadora.php','principal','Calculadora'],
 		_cmSplit,
-		[null,'Salir','./salir.php','principal','Salir']
+		[null,'Salir','./configuraciones/salir.php','principal','Salir']
 	],
 	[null,'Inter. Comerciales',null,null,'Ventas clientes',
 		[null,'Proveedores','./proveedores/index.php','principal','Proveedores'],
@@ -97,18 +85,21 @@ var MenuPrincipal = [
 		[null,'Libro Diario','./librodiario/index.php','principal','Libro Diario'],
 		_cmSplit,
 		[null,'Reportes',null,null,'Reportes',
-			[null,'Costo Articulos en Stock','./fpdf/articulos_costo.php','principal','Costo Articulos en Stock'],
-	    	[null,'Productos Stock negativo','./fpdf/stocks_negativo.php','principal','Productos Stocks negativos'],
-		    [null,'Precios Netos Tienda','./fpdf/articulos_venta.php','principal','Precios Netos Tienda']
+			[null,'Costo Articulos en Stock','./funciones/fpdf/articulos_costo.php','principal','Costo Articulos en Stock'],
+			[null,'Productos Stock negativo','./funciones/fpdf/stocks_negativo.php','principal','Productos Stocks negativos'],
+			[null,'Productos stocks minimo','./funciones/fpdf/stocks_minimo.php','principal','Productos stocks minimo'],
+			[null,'Precios Netos Tienda','./funciones/fpdf/articulos_venta.php','principal','Precios Netos Tienda']
 	]	
 	],
 	[null,'Mantenimientos',null,null,'Mantenimientos',
 		[null,'Etiquetas','./etiquetas/index.php','principal','Etiquetas'],
 		[null,'Optimizar el sistema','./optimizar/index.php','principal','Optimizar el sistema'],
-		[null,'Parametros del Sistema','./parametros/parametros.php','principal','Par�metros del Sistema'],
+		[null,'Parametros del Sistema','./parametros/parametros.php','principal','Parámetros del Sistema'],
+//		[null,'Diseño documentos','./disenodoc/disenodocumentos.php','principal','Diseño documentos'],
 		_cmSplit,
 		[null,'Tablas',null,null,'Tablas',
 			[null,'Impuestos','./impuestos/index.php','principal','Impuestos'],
+//			[null,'Monedas','./impuestos/monedasnew.php','principal','Monedas'],
 	    	[null,'Entidades bancarias','./entidades/index.php','principal','Entidades bancarias'],
 		    [null,'Ubicaciones','./ubicaciones/index.php','principal','Ubicaciones'],
 		    [null,'Embalajes','./embalajes/index.php','principal','Embalajes'],
@@ -153,7 +144,8 @@ var MenuPrincipal = [
 	
 	<div align="center">
 		<a href="http://maxcodekarev.sourceforge.net/" style="font:Verdana; text-decoration:none; color:#000000; font-weight:bold; margin:-10px 0 10px 0;">MaxCodeKaRev-1.0-Beta</a>
-		<a href="http://maxcodekarev.sourceforge.net/" style="margin:0 0 0 680px"><img src="images/maxchico.jpg" alt="MaxCode" width="31" height="30" border="0" longdesc="Aplicaciones Web" style="margin:6px 0 0 0;"></a>	</div>
+		<a href="http://maxcodekarev.sourceforge.net/" style="margin:0 0 0 680px"><img src="images/maxchico.jpg" alt="MaxCode" width="31" height="30" border="0" longdesc="Aplicaciones Web" style="margin:6px 0 0 0;"></a>
+	</div>
 	<div id="MenuAplicacion" align="center"></div>
 
 <script type="text/javascript">
@@ -161,7 +153,7 @@ var MenuPrincipal = [
 	cmDraw ('MenuAplicacion', MenuPrincipal, 'hbr', cmThemeGray, 'ThemeGray');
 -->
 </script>
-
-	<iframe src="central2.php" name="principal" title="principal" width="100%" height="1050px" frameborder=0 scrolling="no" style="margin-left: 0px; margin-right: 0px; margin-top: 2px; margin-bottom: 0px;"></iframe>
+	<iframe src="./configuraciones/centralinicial.php" name="principal" title="principal" width="100%" height="1050px" frameborder=0 scrolling="no" style="margin-left: 0px; margin-right: 0px; margin-top: 2px; margin-bottom: 0px;">
+</iframe>
 </body>
 </html>

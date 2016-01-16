@@ -2,10 +2,10 @@
 <head>
 <title>Pago Mostrador Venta</title>
 <link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-<link href="../calendario/calendar-blue.css" rel="stylesheet" type="text/css">
-<script type="text/JavaScript" language="javascript" src="../calendario/calendar.js"></script>
-<script type="text/JavaScript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
-<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
+<link href="../funciones/calendario/calendar-blue.css" rel="stylesheet" type="text/css">
+<script type="text/JavaScript" language="javascript" src="../funciones/calendario/calendar.js"></script>
+<script type="text/JavaScript" language="javascript" src="../funciones/calendario/lang/calendar-sp.js"></script>
+<script type="text/JavaScript" language="javascript" src="../funciones/calendario/calendar-setup.js"></script>
 <script type="text/javascript">
 ventanaX = 500;
 ventanaY = 530; 
@@ -55,7 +55,7 @@ self.resizeTo(ventanaX,ventanaY);
 	function imprimir(codfactura) {
 			var pagado=document.getElementById("pagado").value;
 			var adevolver=document.getElementById("adevolver").value;
-				location.href="../fpdf/ticket.php?codfactura=" + codfactura + "&pagado=" + pagado + "&adevolver=" + adevolver;
+				location.href="../funciones/fpdf/ticket.php?codfactura=" + codfactura + "&pagado=" + pagado + "&adevolver=" + adevolver;
 	}
 
 function mostrar_img() 
@@ -69,7 +69,7 @@ function enviar() {
 }
 </script>
 </head>
-<?php  include ("../conectar.php"); 
+<?php  include ("../configuraciones/conectar.php"); 
 
 $codfactura=$_REQUEST["codfactura"];
 $codcliente=$_REQUEST["codcliente"];

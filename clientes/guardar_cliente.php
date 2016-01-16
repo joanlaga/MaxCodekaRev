@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+require_once("../configuraciones/conectar.php");
 
 $accion=$_REQUEST["accion"];
 if (!isset($accion)) { $accion=$_REQUEST["accion"]; }
@@ -70,10 +70,6 @@ if ($accion=="baja") {
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript">
 		
-		function aceptar() {
-			location.href="index.php";
-		}
-		
 		var cursor;
 		if (document.all) {
 		// Está utilizando EXPLORER
@@ -82,7 +78,10 @@ if ($accion=="baja") {
 		// Está utilizando MOZILLA/NETSCAPE
 		cursor='pointer';
 		}
-		
+				
+		function aceptar() {
+			location.href="index.php";
+		}
 		</script>
 	</head>
 	<body>

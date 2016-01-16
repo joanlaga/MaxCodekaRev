@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 include ("../funciones/fechas.php");
 
 $codcliente=$_REQUEST["codcliente"];
@@ -49,7 +49,7 @@ $filas=mysql_result($rs_busqueda,0,"filas");
 		
 		
 		function imprimir_etiquetas(codalbaran) {
-				window.open("../fpdf/codigocontinuo.php?codalbaran="+codalbaran);
+				window.open("../funciones/fpdf/codigocontinuo.php?codalbaran="+codalbaran);
 		}
 		
 		function modificar_albaran(codalbaran,marcaestado) {

@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 
 @$accion=$_REQUEST["accion"];
 if (!isset($accion)) { $accion=$_REQUEST["accion"]; }

@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 @$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
@@ -41,7 +41,7 @@ if ($cadena_busqueda<>"") {
 		function imprimir() {
 			var codentidad=document.getElementById("codentidad").value;
 			var nombreentidad=document.getElementById("nombreentidad").value;
-			window.open("../fpdf/entidades.php?codentidad="+codentidad+"&nombreentidad="+nombreentidad);
+			window.open("../funciones/fpdf/entidades.php?codentidad="+codentidad+"&nombreentidad="+nombreentidad);
 		}
 		
 		function buscar() {

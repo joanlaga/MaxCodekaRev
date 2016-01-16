@@ -209,3 +209,414 @@ div.ThemeGrayMenuSplit
 {
 	display:	none;
 }
+
+
+###----
+
+*{
+	  font-family: Helvetica;
+}
+
+/*
+CSS NAVBAR ---- MENU
+*/
+.navbar-default{
+	background-color: #2E75B5;/*cambiar el color de fondo del menu*/
+	border: none;/*cambiar el color del border de abajo del menu*/
+	padding:auto;
+	height: 50px;
+}
+
+.navbar-toggle{
+	float:left;
+}
+
+.navbar-nav{
+	width: 100%;
+	margin: auto;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color: white; /*cambiar las palabras de color del menu*/
+	padding-bottom: 0;
+}
+
+
+
+.navbar-default .navbar-nav>li>a:hover{
+	color: #3FFAFF; /*cambiar las palabras de color del menu*/
+}
+
+.navbar-default .navbar-nav>li>a:focus{
+	color: #3FFAFF; /*cambiar las palabras de color del menu*/
+}
+
+.navbar-default .navbar-nav>li>a:active{
+	color: #3FFAFF; /*cambiar las palabras de color del menu*/
+}
+
+.navbar-default .navbar-nav>li>a.active{
+	color: #3FFAFF; /*cambiar las palabras de color del menu*/
+}
+
+.navbar-logo{
+	height:0px;
+	width:0px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.navbar-default .navbar-toggle{
+	border-color: #3FFAFF;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+	background-color: white;
+}
+
+.container>.navbar-header, .container-fluid>.navbar-header, .container>.navbar-collapse, .container-fluid>.navbar-collapse{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+	color: #3FFAFF;
+	background-color: #3FFAFF;
+	border-color: #3FFAFF;
+}
+
+
+/*
+CSS HEADER ---- BANNER
+*/
+
+header .container{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+header .row{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.banner{
+	width: 100%;
+	height: 651px;
+	background-image: url("../img/home/banner.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+.border-banner{
+	position:relative;
+	height:5px;
+	width:100%;
+	background: #8dc63f; /* Old browsers */
+	background: -moz-linear-gradient(left,  #8dc63f 0%, #532ef7 35%, #207cca 69%, #00b29f 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#8dc63f), color-stop(35%,#532ef7), color-stop(69%,#207cca), color-stop(100%,#00b29f)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #8dc63f 0%,#532ef7 35%,#207cca 69%,#00b29f 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #8dc63f 0%,#532ef7 35%,#207cca 69%,#00b29f 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #8dc63f 0%,#532ef7 35%,#207cca 69%,#00b29f 100%); /* IE10+ */
+	background: linear-gradient(to right,  #8dc63f 0%,#532ef7 35%,#207cca 69%,#00b29f 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8dc63f', endColorstr='#00b29f',GradientType=1 ); /* IE6-9 */
+
+}
+
+.header{
+	position: relative;
+	height: auto;
+	width: 100%;
+}
+
+.main{
+	position: relative;
+	height: auto;
+	min-height: 100%;
+	width: 100%;
+}
+
+.footer{
+	position: relative;
+	height: auto;
+	width: 100%;
+}
+
+#containerFooter{
+	background-color: #2E75B5;
+	width: 100%;
+}
+
+a{
+	color: #3FFAFF;
+	text-decoration: none;
+}
+
+
+
+@media (min-width:1419px){
+.navbar-default .navbar-nav>li{
+
+	padding-left: 3%;
+	padding-right: 2%;
+
+	}	
+
+	.navbar-default{
+	padding-left: 18%;
+
+}
+
+}
+
+
+@media (min-width: 1200px) and (max-width: 1418px){
+	.navbar-default .navbar-nav>li{
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+	.navbar-default{
+	padding-left: 18%;
+
+}
+
+}
+
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	/*
+	CSS NAVBAR ---- MENU
+	*/
+	.navbar-default{
+		padding-left: 15%;
+	}
+
+	.navbar-default .navbar-nav>li{
+	padding-left: .02%;
+	padding-right: .02%;
+}
+}
+
+#footerSocialOculto{
+	display: none;
+}
+
+.social{
+	background-color: #c1c1c1;
+	width: 50px;
+	height:28px;
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	/*
+	CSS NAVBAR ---- MENU
+	*/
+
+	.navbar-default{
+		padding-left: 3%;
+	}
+	
+	.banner{
+		height: 451px;
+	}
+	
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	/*
+	CSS NAVBAR ---- MENU
+	*/
+	
+	.navbar-default{
+		padding-left:30px;
+	}
+
+	.banner{
+		height: 251px;
+	}
+	
+	#footerSocial{
+		width: 100%;
+		padding-left: 0;
+		padding-right:0;
+	}
+	
+	#containerFooter{
+		padding-left: 0;
+		padding-right:0;
+	}
+	
+	.social{
+		width: 33.33%;
+		padding-left: 0;
+		padding-right:0;
+	}
+	
+	#footerRow{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	#footerCol{
+		padding-left: 0;
+		padding-right:0;
+	}
+	
+	#footerText{
+		text-align: center;
+		width: 100%;
+	}
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+
+
+	/*
+	CSS NAVBAR ---- MENU
+	*/
+	
+	.navbar-logo{
+		margin-left: 9%;
+	}
+	
+	.banner{
+		height: 251px;
+	}
+	
+	#footerText{
+		text-align: center;
+	}
+	
+	#footerSocial{
+		width: 100%;
+		padding-left: 0;
+		padding-right:0;
+	}
+	
+	#containerFooter{
+		padding-left: 0;
+		padding-right:0;
+	}
+	
+	#footerRow{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	#footerCol{
+		padding-left: 0;
+		padding-right:0;
+	}
+	
+	.social{
+		width: 40%;
+		padding-left: 0;
+		padding-right:0;
+	}
+	
+	
+	#twitter-icon{
+		width:20%;
+	}
+	#footerText{
+		text-align: center;
+		width: 100%;
+	}
+	
+}
+
+.main{
+	margin: 0;
+	width:100%;
+	height: auto;
+	padding: 0;
+}
+
+.menuB{
+	cursor: pointer;
+}
+
+footer{
+	height: 28px;
+	width: 100%;
+	position: relative;
+	background-color: #2E75B5;
+}
+
+#footerText{
+	color: white;
+	padding-top: 6px;
+	font-weight: lighter;
+	font-size: 10px;
+}
+
+#facebook-icon{
+	background-image: url("../img/facebook.svg");
+	background-position: center left 10px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	background-color: 
+}
+
+#twitter-icon{
+	background-image: url("../img/twitter.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+#linkedin-icon{
+	background-image: url("../img/linkedin.svg");
+	background-position: center right 10px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+#youtube-icon{
+	background-image: url("../img/youtube.png");
+	background-position: center right 10px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.flat{
+	height: 18px;
+	width: 18px;
+	background-size: contain;
+	background-repeat:no-repeat;
+	margin-left: 0px;
+}
+
+#flatOne{
+	background-image: url("../img/usa_flat.png");
+}
+
+#flatTwo{
+	background-image: url("../img/germany_flat.png");
+}
+
+
+
+.menuHome {
+	background-image: url("../img/icono_menu.png");
+	background-size: contain;
+	background-repeat:no-repeat;
+	cursor: pointer;
+	height: 50px;
+	width: 50px;
+}
+
+@font-face {
+    font-family: 'Lato'; /*a name to be used later*/
+    src: url('../assets/Lato-Hairline.ttf'); /*URL to font*/
+}

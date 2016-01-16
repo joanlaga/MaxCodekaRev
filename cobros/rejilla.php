@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 include ("../funciones/fechas.php");
 
 $codcliente=$_REQUEST["codcliente"];
@@ -9,7 +9,8 @@ if ($fechainicio<>"") { $fechainicio=explota($fechainicio); }
 $fechafin=$_REQUEST["fechafin"];
 if ($fechafin<>"") { $fechafin=explota($fechafin); }
 
-$cadena_busqueda=$_REQUEST["cadena_busqueda"];
+//$cadena_busqueda=$_REQUEST["cadena_busqueda"];
+if (!isset($_REQUEST["cadena_busqueda"])) { $cadena_busqueda=""; } else { $cadena_busqueda=str_replace("",",",$_REQUEST["cadena_busqueda"]); }
 
 $where="1=1";
 if ($codcliente <> "") { $where.=" AND facturas.codcliente='$codcliente'"; }

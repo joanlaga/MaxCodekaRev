@@ -22,17 +22,17 @@ header ("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); //ultima actuali
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 
-include ("../conectar.php"); ?>
+include ("../configuraciones/conectar.php"); ?>
 
 <html>
 	<head>
 		<title>Principal</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-		<link href="../calendario/calendar-blue.css" rel="stylesheet" type="text/css">
+		<link href="../funciones/calendario/calendar-blue.css" rel="stylesheet" type="text/css">
 
-		<script type="text/JavaScript" language="javascript" src="../calendario/calendar.js"></script>
-		<script type="text/JavaScript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
-		<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/calendar.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/lang/calendar-sp.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../funciones/calendario/calendar-setup.js"></script>
 		<script type="text/javascript" src="../funciones/validar.js"></script>
 		<script type="text/javascript">
 

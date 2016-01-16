@@ -1,5 +1,5 @@
 <?php  
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php"); 
 
 $accion=$_REQUEST["accion"];
@@ -224,11 +224,11 @@ if ($accion=="convertir") {
 		}
 		
 		function imprimir(codalbaran,codproveedor) {
-			window.open("../fpdf/albaran_proveedor.php?codalbaran="+codalbaran+"&codproveedor="+codproveedor);
+			window.open("../funciones/fpdf/albaran_proveedor.php?codalbaran="+codalbaran+"&codproveedor="+codproveedor);
 		}
 		
 		function imprimirf(codfactura,codproveedor) {
-			window.open("../fpdf/factura_proveedor.php?codfactura="+codfactura+"&codproveedor="+codproveedor);
+			window.open("../funciones/fpdf/factura_proveedor.php?codfactura="+codfactura+"&codproveedor="+codproveedor);
 		}
 		
 		</script>

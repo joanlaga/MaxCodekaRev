@@ -1,5 +1,5 @@
 <?php
- session_start();
+session_start();
 ?>
 <html>
 <head>
@@ -15,7 +15,7 @@
 
 <div id="pagina">
 	<div id="zonaContenido">
-		<div id="tituloForm_PAR" class="header" align="center"><table>Mantención de Par�metros</table></div>
+		<div id="tituloForm_PAR" class="header" align="center"><table>Mantención de Parámetros</table></div>
 <?php
   $conn = connect();
   $showrecs = 100;
@@ -360,7 +360,7 @@
 <input type="hidden" name="xgiro2" value="<?php echo $row["giro2"] ?>">
 <?php showroweditor($row, true); ?>
 <br>
-<div align="center"><input type="submit" name="action" value="Guardar Par�metros"></div>
+<div align="center"><input type="submit" name="action" value="Guardar Parámetros"></div>
 </form>
 </div>
 <?php
@@ -375,7 +375,7 @@
  *  
  * 
 */
- include("../config.php");
+ include("../configuraciones/config.php");
   
   $conn = mysql_connect($Servidor,$Usuario,$Password) or die("Error : El servidor no puede conectar con la base de datos");
   $descriptor=mysql_select_db($BaseDeDatos, $conn)or die("Error : Seleccionando la base de datos.");

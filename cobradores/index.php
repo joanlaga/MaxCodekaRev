@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 @$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
@@ -41,7 +41,7 @@ if ($cadena_busqueda<>"") {
 		function imprimir() {
 			var codcobrador=document.getElementById("codcobrador").value;
 			var nombrecobrador=document.getElementById("nombrecobrador").value;
-			window.open("../fpdf/cobradores.php?codcobrador="+codcobrador+"&nombrecobrador="+nombrecobrador);
+			window.open("../funciones/fpdf/cobradores.php?codcobrador="+codcobrador+"&nombrecobrador="+nombrecobrador);
 		}
 		
 		function buscar() {

@@ -24,7 +24,7 @@
 
 <?php  
 
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 $codalbarantmp=$_REQUEST["codalbarantmp"];
 $retorno=0;

@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 
 ?>
 <html>
@@ -17,7 +17,7 @@ include ("../conectar.php");
 			if (codigo=="") {
 				alert ("Debe seleccionar un articulo antes de imprimir el codigo de barras");
 			} else {
-				window.open("../fpdf/codigo.php?codigo="+codigo);
+				window.open("../funciones/fpdf/codigo.php?codigo="+codigo);
 			}
 		}
 		

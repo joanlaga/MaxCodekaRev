@@ -1,23 +1,5 @@
--- phpMyAdmin SQL Dump
--- version 2.10.2
--- http://www.phpmyadmin.net
--- 
--- Servidor: localhost
--- Tiempo de generación: 15-05-2008 a las 12:10:02
--- Versión del servidor: 5.0.41
--- Versión de PHP: 5.2.3
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
--- 
--- Base de datos: `factusyn`
--- 
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `albalinea`
--- 
 
 CREATE TABLE `albalinea` (
   `codalbaran` int(11) NOT NULL default '0',
@@ -36,17 +18,6 @@ CREATE TABLE `albalinea` (
   PRIMARY KEY  (`codalbaran`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `albalinea`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `albalineap`
--- 
-
 CREATE TABLE `albalineap` (
   `codalbaran` varchar(12) character set latin1 NOT NULL default '',
   `codproveedor` int(11) NOT NULL default '0',
@@ -64,17 +35,6 @@ CREATE TABLE `albalineap` (
   PRIMARY KEY  (`codalbaran`,`numlinea`,`codproveedor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `albalineap`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `albaranes`
--- 
-
 CREATE TABLE `albaranes` (
   `codalbaran` int(11) NOT NULL auto_increment,
   `codfactura` int(6) unsigned zerofill NOT NULL default '000000',
@@ -89,17 +49,6 @@ CREATE TABLE `albaranes` (
   PRIMARY KEY  (`codalbaran`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `albaranes`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `albaranesp`
--- 
-
 CREATE TABLE `albaranesp` (
   `codalbaran` varchar(12) collate utf8_spanish_ci NOT NULL default '',
   `codfactura` varchar(12) collate utf8_spanish_ci NOT NULL default '0',
@@ -110,17 +59,6 @@ CREATE TABLE `albaranesp` (
   `observaciones` text collate utf8_spanish_ci NOT NULL,
   PRIMARY KEY  (`codalbaran`,`codproveedor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- 
--- Volcar la base de datos para la tabla `albaranesp`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `articulos`
--- 
 
 CREATE TABLE `articulos` (
   `id` int(11) NOT NULL auto_increment,
@@ -140,34 +78,12 @@ CREATE TABLE `articulos` (
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `articulos`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `artpro`
--- 
-
 CREATE TABLE `artpro` (
   `idarticulo` int(11) NOT NULL default '0',
   `idproveedor` int(11) NOT NULL default '0',
   `precio` float NOT NULL default '0',
   KEY `idarticulo` (`idarticulo`,`idproveedor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- 
--- Volcar la base de datos para la tabla `artpro`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `artprotmp`
--- 
 
 CREATE TABLE `artprotmp` (
   `idproveedor` int(11) NOT NULL default '0',
@@ -177,17 +93,6 @@ CREATE TABLE `artprotmp` (
   `precio` float NOT NULL default '0',
   PRIMARY KEY  (`idproveedor`,`codfact`,`codalb`,`idarticulo`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- 
--- Volcar la base de datos para la tabla `artprotmp`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `clientes`
--- 
 
 CREATE TABLE `clientes` (
   `codcliente` int(11) NOT NULL auto_increment,
@@ -216,17 +121,7 @@ CREATE TABLE `clientes` (
   PRIMARY KEY  (`codcliente`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='clientes' AUTO_INCREMENT=3 ;
 
--- 
--- Volcar la base de datos para la tabla `clientes`
--- 
-
 INSERT INTO `clientes` VALUES (1, '', '', '0000-00-00', '', '', '', 0, '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '');
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `descuento`
--- 
 
 CREATE TABLE `descuento` (
   `id` int(11) NOT NULL auto_increment,
@@ -234,17 +129,6 @@ CREATE TABLE `descuento` (
   `descuento` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `descuento`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `docalbaran`
--- 
 
 CREATE TABLE `docalbaran` (
   `color` tinytext character set latin1 NOT NULL,
@@ -264,17 +148,6 @@ CREATE TABLE `docalbaran` (
   `alineacion` tinytext character set latin1 collate latin1_spanish_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- 
--- Volcar la base de datos para la tabla `docalbaran`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `docfactura`
--- 
-
 CREATE TABLE `docfactura` (
   `color` tinytext character set latin1 NOT NULL,
   `marcagua` tinytext character set latin1 NOT NULL,
@@ -293,17 +166,6 @@ CREATE TABLE `docfactura` (
   `alineacion` tinytext character set latin1 NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- 
--- Volcar la base de datos para la tabla `docfactura`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `doclistado`
--- 
-
 CREATE TABLE `doclistado` (
   `color` tinytext character set latin1 NOT NULL,
   `marcagua` tinytext character set latin1 NOT NULL,
@@ -320,17 +182,6 @@ CREATE TABLE `doclistado` (
   `impuestos` tinytext character set latin1 collate latin1_spanish_ci NOT NULL,
   `alineacion` tinytext character set latin1 collate latin1_spanish_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- 
--- Volcar la base de datos para la tabla `doclistado`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `docparte`
--- 
 
 CREATE TABLE `docparte` (
   `color` tinytext character set latin1 NOT NULL,
@@ -349,17 +200,6 @@ CREATE TABLE `docparte` (
   `alineacion` tinytext character set latin1 collate latin1_spanish_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- 
--- Volcar la base de datos para la tabla `docparte`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `docpresupuesto`
--- 
-
 CREATE TABLE `docpresupuesto` (
   `color` tinytext character set latin1 NOT NULL,
   `marcagua` tinytext character set latin1 NOT NULL,
@@ -376,17 +216,6 @@ CREATE TABLE `docpresupuesto` (
   `impuestos` tinytext character set latin1 NOT NULL,
   `alineacion` tinytext character set latin1 collate latin1_spanish_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- 
--- Volcar la base de datos para la tabla `docpresupuesto`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `empresa`
--- 
 
 CREATE TABLE `empresa` (
   `id` tinyint(4) NOT NULL default '0',
@@ -407,17 +236,6 @@ CREATE TABLE `empresa` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- 
--- Volcar la base de datos para la tabla `empresa`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `factulinea`
--- 
-
 CREATE TABLE `factulinea` (
   `codfactura` int(11) NOT NULL default '0',
   `numlinea` tinyint(4) NOT NULL auto_increment,
@@ -434,17 +252,6 @@ CREATE TABLE `factulinea` (
   `importeiva` float NOT NULL default '0',
   PRIMARY KEY  (`codfactura`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `factulinea`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `factulineap`
--- 
 
 CREATE TABLE `factulineap` (
   `codfactura` varchar(12) character set latin1 NOT NULL default '0',
@@ -464,17 +271,6 @@ CREATE TABLE `factulineap` (
   PRIMARY KEY  (`codfactura`,`codproveedor`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `factulineap`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `factulineaperiod`
--- 
-
 CREATE TABLE `factulineaperiod` (
   `codfactura` int(11) NOT NULL default '0',
   `numlinea` tinyint(4) NOT NULL auto_increment,
@@ -490,17 +286,6 @@ CREATE TABLE `factulineaperiod` (
   `importeiva` float NOT NULL default '0',
   PRIMARY KEY  (`codfactura`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `factulineaperiod`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `facturas`
--- 
 
 CREATE TABLE `facturas` (
   `codfactura` int(6) unsigned zerofill NOT NULL auto_increment,
@@ -522,17 +307,6 @@ CREATE TABLE `facturas` (
   PRIMARY KEY  (`codfactura`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `facturas`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `facturasp`
--- 
-
 CREATE TABLE `facturasp` (
   `codfactura` varchar(12) character set latin1 NOT NULL default '0',
   `fecha` date NOT NULL default '0000-00-00',
@@ -546,17 +320,6 @@ CREATE TABLE `facturasp` (
   `retencion` tinytext character set latin1 NOT NULL,
   PRIMARY KEY  (`codfactura`,`codproveedor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- 
--- Volcar la base de datos para la tabla `facturasp`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `facturasperiod`
--- 
 
 CREATE TABLE `facturasperiod` (
   `codfactura` int(4) unsigned zerofill NOT NULL auto_increment,
@@ -574,17 +337,6 @@ CREATE TABLE `facturasperiod` (
   PRIMARY KEY  (`codfactura`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `facturasperiod`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `familia`
--- 
-
 CREATE TABLE `familia` (
   `id` int(11) NOT NULL auto_increment,
   `codigo` text character set latin1 NOT NULL,
@@ -593,34 +345,12 @@ CREATE TABLE `familia` (
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `familia`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `formapago`
--- 
-
 CREATE TABLE `formapago` (
   `codfp` tinyint(4) NOT NULL auto_increment,
   `denfp` tinytext character set latin1 NOT NULL,
   `observaciones` text character set latin1 NOT NULL,
   PRIMARY KEY  (`codfp`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='formas de pago' AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `formapago`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `gastos`
--- 
 
 CREATE TABLE `gastos` (
   `id` int(11) NOT NULL default '0',
@@ -631,17 +361,6 @@ CREATE TABLE `gastos` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- 
--- Volcar la base de datos para la tabla `gastos`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `gastoslinea`
--- 
-
 CREATE TABLE `gastoslinea` (
   `codigo` text collate utf8_spanish_ci NOT NULL,
   `descripcion` text collate utf8_spanish_ci NOT NULL,
@@ -649,17 +368,6 @@ CREATE TABLE `gastoslinea` (
   `precio` int(11) NOT NULL default '0',
   `descuento` tinyint(4) NOT NULL default '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- 
--- Volcar la base de datos para la tabla `gastoslinea`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `mail`
--- 
 
 CREATE TABLE `mail` (
   `forenvio` tinytext character set latin1 NOT NULL,
@@ -675,17 +383,6 @@ CREATE TABLE `mail` (
   `puerto` varchar(111) character set latin1 NOT NULL default ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- 
--- Volcar la base de datos para la tabla `mail`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `mailenviados`
--- 
-
 CREATE TABLE `mailenviados` (
   `id` int(11) NOT NULL auto_increment,
   `para` tinytext character set latin1 collate latin1_spanish_ci NOT NULL,
@@ -696,17 +393,6 @@ CREATE TABLE `mailenviados` (
   `codcliente` tinyint(11) NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `mailenviados`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `nivel`
--- 
 
 CREATE TABLE `nivel` (
   `usuario` tinyint(4) NOT NULL default '0',
@@ -720,17 +406,6 @@ CREATE TABLE `nivel` (
   `calendario` tinyint(4) NOT NULL default '0',
   `clasico` tinyint(4) NOT NULL default '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- 
--- Volcar la base de datos para la tabla `nivel`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `operarios`
--- 
 
 CREATE TABLE `operarios` (
   `codoperario` tinyint(4) NOT NULL,
@@ -750,17 +425,6 @@ CREATE TABLE `operarios` (
   PRIMARY KEY  (`codoperario`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- 
--- Volcar la base de datos para la tabla `operarios`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `partelinea`
--- 
-
 CREATE TABLE `partelinea` (
   `codparte` int(11) NOT NULL default '0',
   `numlinea` tinyint(4) NOT NULL auto_increment,
@@ -779,17 +443,6 @@ CREATE TABLE `partelinea` (
   PRIMARY KEY  (`codparte`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `partelinea`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `partes`
--- 
-
 CREATE TABLE `partes` (
   `codparte` int(11) NOT NULL auto_increment,
   `fecha` date NOT NULL default '0000-00-00',
@@ -804,17 +457,6 @@ CREATE TABLE `partes` (
   PRIMARY KEY  (`codparte`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `partes`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `pedidos`
--- 
-
 CREATE TABLE `pedidos` (
   `codpedido` varchar(12) character set latin1 collate latin1_spanish_ci NOT NULL default '0',
   `fecha` date NOT NULL default '0000-00-00',
@@ -827,17 +469,6 @@ CREATE TABLE `pedidos` (
   `fechapago` date NOT NULL default '0000-00-00',
   PRIMARY KEY  (`codpedido`,`codproveedor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- 
--- Volcar la base de datos para la tabla `pedidos`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `pedidoslinea`
--- 
 
 CREATE TABLE `pedidoslinea` (
   `codpedido` varchar(12) character set latin1 collate latin1_spanish_ci NOT NULL default '0',
@@ -853,17 +484,6 @@ CREATE TABLE `pedidoslinea` (
   `dcto` float NOT NULL default '0',
   PRIMARY KEY  (`codpedido`,`codproveedor`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `pedidoslinea`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `presupuestolinea`
--- 
 
 CREATE TABLE `presupuestolinea` (
   `codpresupuesto` int(11) NOT NULL default '0',
@@ -882,17 +502,6 @@ CREATE TABLE `presupuestolinea` (
   PRIMARY KEY  (`codpresupuesto`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `presupuestolinea`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `presupuestos`
--- 
-
 CREATE TABLE `presupuestos` (
   `codpresupuesto` int(11) NOT NULL auto_increment,
   `quien` int(11) NOT NULL default '0',
@@ -907,17 +516,6 @@ CREATE TABLE `presupuestos` (
   `cosa` tinytext collate utf8_spanish_ci NOT NULL,
   PRIMARY KEY  (`codpresupuesto`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `presupuestos`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `proveedores`
--- 
 
 CREATE TABLE `proveedores` (
   `codproveedor` int(11) NOT NULL auto_increment,
@@ -941,33 +539,11 @@ CREATE TABLE `proveedores` (
   PRIMARY KEY  (`codproveedor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='proveedores' AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `proveedores`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `provincias`
--- 
-
 CREATE TABLE `provincias` (
   `codprovincia` int(4) NOT NULL auto_increment,
   `denprovincia` tinytext character set latin1 NOT NULL,
   PRIMARY KEY  (`codprovincia`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `provincias`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `series`
--- 
 
 CREATE TABLE `series` (
   `codser` tinyint(4) NOT NULL auto_increment,
@@ -975,17 +551,6 @@ CREATE TABLE `series` (
   `observaciones` text character set latin1 NOT NULL,
   PRIMARY KEY  (`codser`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `series`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `subfamilia`
--- 
 
 CREATE TABLE `subfamilia` (
   `id` int(11) NOT NULL auto_increment,
@@ -997,17 +562,6 @@ CREATE TABLE `subfamilia` (
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `subfamilia`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `tempartpro`
--- 
-
 CREATE TABLE `tempartpro` (
   `id` int(11) NOT NULL auto_increment,
   `articulo` int(11) NOT NULL default '0',
@@ -1015,17 +569,6 @@ CREATE TABLE `tempartpro` (
   `precio` float NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `tempartpro`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `temporales`
--- 
 
 CREATE TABLE `temporales` (
   `codigocosa` int(11) NOT NULL auto_increment,
@@ -1038,17 +581,6 @@ CREATE TABLE `temporales` (
   `quien` text collate utf8_spanish_ci NOT NULL,
   PRIMARY KEY  (`codigocosa`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `temporales`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `temporaleslinea`
--- 
 
 CREATE TABLE `temporaleslinea` (
   `codigocosa` int(11) NOT NULL default '0',
@@ -1070,17 +602,6 @@ CREATE TABLE `temporaleslinea` (
   PRIMARY KEY  (`codigocosa`,`numlinea`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `temporaleslinea`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `tiendainfo`
--- 
-
 CREATE TABLE `tiendainfo` (
   `id` int(111) NOT NULL auto_increment,
   `alto` text character set latin1 NOT NULL,
@@ -1088,33 +609,11 @@ CREATE TABLE `tiendainfo` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
--- 
--- Volcar la base de datos para la tabla `tiendainfo`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `tiendanoti`
--- 
-
 CREATE TABLE `tiendanoti` (
   `id` int(11) NOT NULL auto_increment,
   `texto` text character set latin1 NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `tiendanoti`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `tiendarecu`
--- 
 
 CREATE TABLE `tiendarecu` (
   `id` int(111) NOT NULL auto_increment,
@@ -1122,17 +621,6 @@ CREATE TABLE `tiendarecu` (
   `bajo` text character set latin1 NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
-
--- 
--- Volcar la base de datos para la tabla `tiendarecu`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `user_list`
--- 
 
 CREATE TABLE `user_list` (
   `ID` smallint(6) unsigned NOT NULL auto_increment,
@@ -1147,34 +635,44 @@ CREATE TABLE `user_list` (
   UNIQUE KEY `ID` (`ID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=45 ;
 
--- 
--- Volcar la base de datos para la tabla `user_list`
--- 
-
 INSERT INTO `user_list` VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 0, 'vista.jpg', 'vista_glass', '1', 'clasico');
 
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_asst`
--- 
+CREATE TABLE IF NOT EXISTS `parametros` (
+  `indice` int(1) NOT NULL default '0',
+  `usuario` varchar(10) default NULL,
+  `clave` varchar(10) default NULL,
+  `servidor` varchar(20) default NULL,
+  `basedatos` varchar(20) default NULL,
+  `numeracionfactura` decimal(10,0) default NULL,
+  `setnumfac` decimal(1,0) default NULL,
+  `fondofac` text,
+  `imagenfac` varchar(30) default NULL,
+  `fondoguia` text,
+  `imagenguia` varchar(30) default NULL,
+  `filasdetallefactura` int(2) default NULL,
+  `ivaimp` decimal(2,0) default NULL,
+  `nombremoneda` varchar(20) default NULL,
+  `simbolomoneda` varchar(20) default NULL,
+  `codigomoneda` varchar(10) default NULL,
+  `nomempresa` tinytext,
+  `giro` varchar(50) default NULL,
+  `fonos` varchar(30) default NULL,
+  `direccion` varchar(30) default NULL,
+  `comuna` varchar(30) default NULL,
+  `ciudadactual` varchar(30) default NULL,
+  `numerofiscal` varchar(20) default NULL,
+  `resolucionsii` varchar(50) default NULL,
+  `rutempresa` varchar(20) default NULL,
+  `giro2` varchar(50) default NULL,
+  PRIMARY KEY  (`indice`),
+  KEY `indice` (`indice`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `webcal_asst` (
   `cal_boss` varchar(25) NOT NULL default '',
   `cal_assistant` varchar(25) NOT NULL default '',
   PRIMARY KEY  (`cal_boss`,`cal_assistant`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- 
--- Volcar la base de datos para la tabla `webcal_asst`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_categories`
--- 
 
 CREATE TABLE `webcal_categories` (
   `cat_id` int(11) NOT NULL default '0',
@@ -1183,33 +681,11 @@ CREATE TABLE `webcal_categories` (
   PRIMARY KEY  (`cat_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_categories`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_config`
--- 
-
 CREATE TABLE `webcal_config` (
   `cal_setting` varchar(50) NOT NULL default '',
   `cal_value` varchar(100) default NULL,
   PRIMARY KEY  (`cal_setting`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- 
--- Volcar la base de datos para la tabla `webcal_config`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_entry`
--- 
 
 CREATE TABLE `webcal_entry` (
   `cal_id` int(11) NOT NULL default '0',
@@ -1229,34 +705,12 @@ CREATE TABLE `webcal_entry` (
   PRIMARY KEY  (`cal_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_entry`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_entry_ext_user`
--- 
-
 CREATE TABLE `webcal_entry_ext_user` (
   `cal_id` int(11) NOT NULL default '0',
   `cal_fullname` varchar(50) NOT NULL default '',
   `cal_email` varchar(75) default NULL,
   PRIMARY KEY  (`cal_id`,`cal_fullname`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- 
--- Volcar la base de datos para la tabla `webcal_entry_ext_user`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_entry_log`
--- 
 
 CREATE TABLE `webcal_entry_log` (
   `cal_log_id` int(11) NOT NULL default '0',
@@ -1270,17 +724,6 @@ CREATE TABLE `webcal_entry_log` (
   PRIMARY KEY  (`cal_log_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_entry_log`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_entry_repeats`
--- 
-
 CREATE TABLE `webcal_entry_repeats` (
   `cal_id` int(11) NOT NULL default '0',
   `cal_type` varchar(20) default NULL,
@@ -1290,33 +733,11 @@ CREATE TABLE `webcal_entry_repeats` (
   PRIMARY KEY  (`cal_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_entry_repeats`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_entry_repeats_not`
--- 
-
 CREATE TABLE `webcal_entry_repeats_not` (
   `cal_id` int(11) NOT NULL default '0',
   `cal_date` int(11) NOT NULL default '0',
   PRIMARY KEY  (`cal_id`,`cal_date`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- 
--- Volcar la base de datos para la tabla `webcal_entry_repeats_not`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_entry_user`
--- 
 
 CREATE TABLE `webcal_entry_user` (
   `cal_id` int(11) NOT NULL default '0',
@@ -1326,17 +747,6 @@ CREATE TABLE `webcal_entry_user` (
   PRIMARY KEY  (`cal_id`,`cal_login`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_entry_user`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_group`
--- 
-
 CREATE TABLE `webcal_group` (
   `cal_group_id` int(11) NOT NULL default '0',
   `cal_owner` varchar(25) default NULL,
@@ -1345,33 +755,11 @@ CREATE TABLE `webcal_group` (
   PRIMARY KEY  (`cal_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_group`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_group_user`
--- 
-
 CREATE TABLE `webcal_group_user` (
   `cal_group_id` int(11) NOT NULL default '0',
   `cal_login` varchar(25) NOT NULL default '',
   PRIMARY KEY  (`cal_group_id`,`cal_login`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- 
--- Volcar la base de datos para la tabla `webcal_group_user`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_import`
--- 
 
 CREATE TABLE `webcal_import` (
   `cal_import_id` int(11) NOT NULL default '0',
@@ -1382,17 +770,6 @@ CREATE TABLE `webcal_import` (
   PRIMARY KEY  (`cal_import_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_import`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_import_data`
--- 
-
 CREATE TABLE `webcal_import_data` (
   `cal_import_id` int(11) NOT NULL default '0',
   `cal_id` int(11) NOT NULL default '0',
@@ -1402,17 +779,6 @@ CREATE TABLE `webcal_import_data` (
   PRIMARY KEY  (`cal_id`,`cal_login`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_import_data`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_nonuser_cals`
--- 
-
 CREATE TABLE `webcal_nonuser_cals` (
   `cal_login` varchar(25) NOT NULL default '',
   `cal_lastname` varchar(25) default NULL,
@@ -1421,17 +787,6 @@ CREATE TABLE `webcal_nonuser_cals` (
   PRIMARY KEY  (`cal_login`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_nonuser_cals`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_reminder_log`
--- 
-
 CREATE TABLE `webcal_reminder_log` (
   `cal_id` int(11) NOT NULL default '0',
   `cal_name` varchar(25) NOT NULL default '',
@@ -1439,17 +794,6 @@ CREATE TABLE `webcal_reminder_log` (
   `cal_last_sent` int(11) NOT NULL default '0',
   PRIMARY KEY  (`cal_id`,`cal_name`,`cal_event_date`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- 
--- Volcar la base de datos para la tabla `webcal_reminder_log`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_report`
--- 
 
 CREATE TABLE `webcal_report` (
   `cal_login` varchar(25) NOT NULL default '',
@@ -1468,34 +812,12 @@ CREATE TABLE `webcal_report` (
   PRIMARY KEY  (`cal_report_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_report`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_report_template`
--- 
-
 CREATE TABLE `webcal_report_template` (
   `cal_report_id` int(11) NOT NULL default '0',
   `cal_template_type` char(1) NOT NULL default '',
   `cal_template_text` text,
   PRIMARY KEY  (`cal_report_id`,`cal_template_type`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- 
--- Volcar la base de datos para la tabla `webcal_report_template`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_site_extras`
--- 
 
 CREATE TABLE `webcal_site_extras` (
   `cal_id` int(11) NOT NULL default '0',
@@ -1507,17 +829,6 @@ CREATE TABLE `webcal_site_extras` (
   PRIMARY KEY  (`cal_id`,`cal_name`,`cal_type`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_site_extras`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_user`
--- 
-
 CREATE TABLE `webcal_user` (
   `cal_login` varchar(25) NOT NULL default '',
   `cal_passwd` varchar(32) default NULL,
@@ -1528,17 +839,6 @@ CREATE TABLE `webcal_user` (
   PRIMARY KEY  (`cal_login`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_user`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_user_layers`
--- 
-
 CREATE TABLE `webcal_user_layers` (
   `cal_layerid` int(11) NOT NULL default '0',
   `cal_login` varchar(25) NOT NULL default '',
@@ -1548,34 +848,12 @@ CREATE TABLE `webcal_user_layers` (
   PRIMARY KEY  (`cal_login`,`cal_layeruser`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_user_layers`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_user_pref`
--- 
-
 CREATE TABLE `webcal_user_pref` (
   `cal_login` varchar(25) NOT NULL default '',
   `cal_setting` varchar(25) NOT NULL default '',
   `cal_value` varchar(100) default NULL,
   PRIMARY KEY  (`cal_login`,`cal_setting`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- 
--- Volcar la base de datos para la tabla `webcal_user_pref`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_view`
--- 
 
 CREATE TABLE `webcal_view` (
   `cal_view_id` int(11) NOT NULL default '0',
@@ -1586,24 +864,8 @@ CREATE TABLE `webcal_view` (
   PRIMARY KEY  (`cal_view_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Volcar la base de datos para la tabla `webcal_view`
--- 
-
-
--- --------------------------------------------------------
-
--- 
--- Estructura de tabla para la tabla `webcal_view_user`
--- 
-
 CREATE TABLE `webcal_view_user` (
   `cal_view_id` int(11) NOT NULL default '0',
   `cal_login` varchar(25) NOT NULL default '',
   PRIMARY KEY  (`cal_view_id`,`cal_login`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- 
--- Volcar la base de datos para la tabla `webcal_view_user`
--- 
-

@@ -15,9 +15,9 @@ function pon_prefijo(pref,nombre) {
 }
 
 </script>
-<?php include ("../conectar.php"); 
+<?php include ("../configuraciones/conectar.php"); 
 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 $familia=$_REQUEST["cmbfamilia"];
 $referencia=$_REQUEST["referencia"];
 $descripcion=$_REQUEST["descripcion"];

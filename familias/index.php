@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 @$cadena_busqueda=$_REQUEST["cadena_busqueda"];
 
@@ -41,7 +41,7 @@ if ($cadena_busqueda<>"") {
 		function imprimir() {
 			var codfamilia=document.getElementById("codfamilia").value;
 			var nombre=document.getElementById("nombre").value;
-			window.open("../fpdf/familias.php?codfamilia="+codfamilia+"&nombre="+nombre);
+			window.open("../funciones/fpdf/familias.php?codfamilia="+codfamilia+"&nombre="+nombre);
 		}
 		function buscar() {
 			var cadena;

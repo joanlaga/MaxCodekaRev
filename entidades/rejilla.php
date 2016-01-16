@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 $nombreentidad=$_REQUEST["nombreentidad"];
 $codentidad=$_REQUEST["codentidad"];

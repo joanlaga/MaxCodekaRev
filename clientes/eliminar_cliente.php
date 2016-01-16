@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+require_once("../configuraciones/conectar.php");
 
 $codcliente=$_REQUEST["codcliente"];
 @$cadena_busqueda=$_REQUEST["cadena_busqueda"];
@@ -14,14 +14,6 @@ $rs_query=mysql_query($query);
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript">
 		
-		function aceptar(codcliente) {
-			location.href="guardar_cliente.php?codcliente=" + codcliente + "&accion=baja" + "&cadena_busqueda=<?php echo $cadena_busqueda?>";
-		}
-		
-		function cancelar() {
-			location.href="index.php?cadena_busqueda=<?php echo $cadena_busqueda?>";
-		}
-		
 		var cursor;
 		if (document.all) {
 		// Está utilizando EXPLORER
@@ -30,7 +22,14 @@ $rs_query=mysql_query($query);
 		// Está utilizando MOZILLA/NETSCAPE
 		cursor='pointer';
 		}
+				
+		function aceptar(codcliente) {
+			location.href="guardar_cliente.php?codcliente=" + codcliente + "&accion=baja" + "&cadena_busqueda=<?php echo $cadena_busqueda?>";
+		}
 		
+		function cancelar() {
+			location.href="index.php?cadena_busqueda=<?php echo $cadena_busqueda?>";
+		}
 		</script>
 	</head>
 	<body>

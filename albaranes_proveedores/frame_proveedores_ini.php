@@ -15,7 +15,7 @@ function pon_prefijo(pref,nombre) {
 }
 
 </script>
-<?php  include ("../conectar.php"); ?>
+<?php  include ("../configuraciones/conectar.php"); ?>
 <body>
 <?php  
 	

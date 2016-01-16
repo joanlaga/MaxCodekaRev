@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php"); 
 
 $codfactura=$_REQUEST["codfactura"];
@@ -34,7 +34,7 @@ $iva=mysql_result($rs_query,0,"iva");
 		}
 		
 		function imprimir(codfactura,codproveedor) {
-			window.open("../fpdf/factura_proveedor.php?codfactura="+codfactura+"&codproveedor="+codproveedor);
+			window.open("../funciones/fpdf/factura_proveedor.php?codfactura="+codfactura+"&codproveedor="+codproveedor);
 		}
 		
 		</script>

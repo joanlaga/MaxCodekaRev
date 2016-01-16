@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+include ("../configuraciones/conectar.php");
 
 $codembalaje=$_REQUEST["codembalaje"];
 $nombre=$_REQUEST["nombre"];

@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+require_once("../configuraciones/conectar.php");
 
 $codcliente=$_REQUEST["codcliente"];
 $nombre=$_REQUEST["nombre"];
@@ -8,7 +8,11 @@ $codprovincia=$_REQUEST["cboProvincias"];
 $localidad=$_REQUEST["localidad"];
 $telefono=$_REQUEST["telefono"];
 $cadena_busqueda=$_REQUEST["cadena_busqueda"];
-
+/*
+echo "<pre>";
+print_r($_REQUEST);
+echo "</pre>";
+*/
 $where="1=1";
 if ($codcliente <> "") { $where.=" AND codcliente='$codcliente'"; }
 if ($nombre <> "") { $where.=" AND nombre like '%".$nombre."%'"; }
@@ -29,16 +33,25 @@ $filas=mysql_result($rs_busqueda,0,"filas");
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript">
 		
+		var cursor;
+		if (document.all) {
+		// Está utilizando EXPLORER
+		cursor='hand';
+		} else {
+		// Está utilizando MOZILLA/NETSCAPE
+		cursor='pointer';
+		}
+				
 		function ver_cliente(codcliente) {
-			parent.location.href="ver_cliente.php?codcliente=" + codcliente + "&cadena_busqueda=<?php echo $cadena_busqueda?>";
+			parent.location.href="ver_cliente.php?codcliente=" + codcliente + "&cadena_busqueda=<?php echo $cadena_busqueda ?>"
 		}
 		
 		function modificar_cliente(codcliente) {
-			parent.location.href="modificar_cliente.php?codcliente=" + codcliente + "&cadena_busqueda=<?php echo $cadena_busqueda?>";
+			parent.location.href="modificar_cliente.php?codcliente=" + codcliente + "&cadena_busqueda=<?php echo $cadena_busqueda ?>"
 		}
 		
 		function eliminar_cliente(codcliente) {
-			parent.location.href="eliminar_cliente.php?codcliente=" + codcliente + "&cadena_busqueda=<?php echo $cadena_busqueda?>";
+			parent.location.href="eliminar_cliente.php?codcliente=" + codcliente + "&cadena_busqueda=<?php echo $cadena_busqueda ?>"
 		}
 
 		function inicio() {
@@ -72,7 +85,8 @@ $filas=mysql_result($rs_busqueda,0,"filas");
 			<div align="center">
 			<table class="fuente8" width="100%" cellspacing=0 cellpadding=3 border=0 ID="Table1">
 			<input type="hidden" name="numfilas" id="numfilas" value="<?php echo $filas?>">
-				<?php @$iniciopagina=$_REQUEST["iniciopagina"];
+			<?php 
+				@$iniciopagina=$_REQUEST["iniciopagina"];
 				if (empty($iniciopagina)) { @$iniciopagina=$_REQUEST["iniciopagina"]; } else { $iniciopagina=$iniciopagina-1;}
 				if (empty($iniciopagina)) { $iniciopagina=0; }
 				if ($iniciopagina>$filas) { $iniciopagina=0; }
@@ -90,7 +104,7 @@ $filas=mysql_result($rs_busqueda,0,"filas");
 							<td class="aDerecha" width="13%"><div align="center"><?php echo mysql_result($res_resultado,$contador,"nif")?></div></td>
 							<td class="aDerecha" width="19%"><div align="center"><?php echo mysql_result($res_resultado,$contador,"telefono")?></div></td>
 							<td width="5%"><div align="center"><a href="#"><img src="../images/modificar.png" width="16" height="16" border="0" onClick="modificar_cliente(<?php echo mysql_result($res_resultado,$contador,"codcliente")?>)" title="Modificar"></a></div></td>
-														<td width="5%"><div align="center"><a href="#"><img src="../images/ver.png" width="16" height="16" border="0" onClick="ver_cliente(<?php echo mysql_result($res_resultado,$contador,"codcliente")?>)" title="Visualizar"></a></div></td>
+							<td width="5%"><div align="center"><a href="#"><img src="../images/ver.png" width="16" height="16" border="0" onClick="ver_cliente(<?php echo mysql_result($res_resultado,$contador,"codcliente")?>)" title="Visualizar"></a></div></td>
 							<td width="6%"><div align="center"><a href="#"><img src="../images/eliminar.png" width="16" height="16" border="0" onClick="eliminar_cliente(<?php echo mysql_result($res_resultado,$contador,"codcliente")?>)" title="Eliminar"></a></div></td>
 						</tr>
 						<?php $contador++;

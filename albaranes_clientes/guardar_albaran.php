@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar.php"); 
+include ("../configuraciones/conectar.php"); 
 include ("../funciones/fechas.php"); 
 
 @$accion=$_REQUEST["accion"];
@@ -200,11 +200,11 @@ if ($accion=="convertir") {
 		}
 		
 		function imprimir(codalbaran) {
-			window.open("../fpdf/albaran.php?codalbaran="+codalbaran);
+			window.open("../funciones/fpdf/albaran.php?codalbaran="+codalbaran);
 		}
 		
 		function imprimirf(codfactura) {
-			window.open("../fpdf/factura.php?codfactura="+codfactura);
+			window.open("../funciones/fpdf/factura.php?codfactura="+codfactura);
 		}
 		
 		</script>

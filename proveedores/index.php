@@ -1,26 +1,28 @@
 <?php
-include ("../conectar.php");
+require_once("../configuraciones/conectar.php");
 
-@$cadena_busqueda=$_REQUEST["cadena_busqueda"];
+if (!isset($_REQUEST["cadena_busqueda"])) { $cadena_busqueda = ""; } else { $cadena_busqueda=str_replace("",",",$_REQUEST["cadena_busqueda"]); }
 
-if (!isset($cadena_busqueda)) { $cadena_busqueda=""; } else { $cadena_busqueda=str_replace("",",",$cadena_busqueda); }
+//@$cadena_busqueda=$_REQUEST["cadena_busqueda"];
+//$cadena_busqueda = "";
+//if (!isset($cadena_busqueda)) { $cadena_busqueda=""; } else { $cadena_busqueda=str_replace("",",",$cadena_busqueda); }
 
-if ($cadena_busqueda<>"") {
-	$array_cadena_busqueda=split("~",$cadena_busqueda);
-	$codproveedor=$array_cadena_busqueda[1];
-	$nombre=$array_cadena_busqueda[2];
-	$nif=$array_cadena_busqueda[3];
-	$provincia=$array_cadena_busqueda[4];
-	$localidad=$array_cadena_busqueda[5];
-	$telefono=$array_cadena_busqueda[6];
-} else {
-	$codproveedor="";
-	$nombre="";
-	$nif="";
-	$provincia="";
-	$localidad="";
-	$telefono="";
-}
+	if ($cadena_busqueda<>"") {
+		$array_cadena_busqueda=split("~",$cadena_busqueda);
+		$codproveedor=$array_cadena_busqueda[1];
+		$nombre=$array_cadena_busqueda[2];
+		$nif=$array_cadena_busqueda[3];
+		$provincia=$array_cadena_busqueda[4];
+		$localidad=$array_cadena_busqueda[5];
+		$telefono=$array_cadena_busqueda[6];
+	} else {
+		$codproveedor="";
+		$nombre="";
+		$nif="";
+		$provincia="";
+		$localidad="";
+		$telefono="";
+	}
 
 ?>
 
@@ -29,14 +31,6 @@ if ($cadena_busqueda<>"") {
 		<title>Proveedores</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript">
-
-		function inicio() {
-			document.getElementById("form_busqueda").submit();
-		}
-
-		function nuevo_proveedor() {
-			location.href="nuevo_proveedor.php";
-		}
 
 		var cursor;
 		if (document.all) {
@@ -47,6 +41,14 @@ if ($cadena_busqueda<>"") {
 		cursor='pointer';
 		}
 
+		function inicio() {
+			document.getElementById("form_busqueda").submit();
+		}
+
+		function nuevo_proveedor() {
+			location.href="nuevo_proveedor.php";
+		}
+
 		function imprimir() {
 			var codproveedor=document.getElementById("codproveedor").value;
 			var nombre=document.getElementById("nombre").value;
@@ -54,7 +56,7 @@ if ($cadena_busqueda<>"") {
 			var provincia=document.getElementById("cboProvincias").value;
 			var localidad=document.getElementById("localidad").value;
 			var telefono=document.getElementById("telefono").value;
-			window.open("../fpdf/proveedores.php?codproveedor="+codproveedor+"&nombre="+nombre+"&nif="+nif+"&provincia="+provincia+"&localidad="+localidad+"&telefono="+telefono);
+			window.open("../funciones/fpdf/proveedores.php?codproveedor="+codproveedor+"&nombre="+nombre+"&nif="+nif+"&provincia="+provincia+"&localidad="+localidad+"&telefono="+telefono);
 		}
 
 		function buscar() {
